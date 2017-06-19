@@ -5,7 +5,7 @@
 [Trello link][trello] Eventually
 
 [heroku]: http://www.herokuapp.com
-[trello]: https://trello.com/
+[trello]: https://trello.com/b/g2OMGOFX/capebook
 
 ## Minimum Viable Product
 
