@@ -1,90 +1,91 @@
 ## Component Hierarchy
 
 **LoginPage**
- - LoginHeader
-  + FullLogo (Link)
-  + LoginContainer
-   + LoginForm
- - SignupContainer
-  + SignupForm
- - ValueProposition (Replaceable with new 'RecentLogin' feature)
- - Footer
+  - LoginHeader
+    - FullLogo (Link)
+    - LoginContainer
+      - LoginForm
+  - SignupContainer
+    - SignupForm
+  - ValueProposition (Replaceable with new 'RecentLogin' feature)
+  - Footer
 
 **HomePage**
- - NavBar*
- - SideNav*
- - Feed*
- - FluffColumn*
- - ChatIndexContainer*
+  - NavBar*
+  - SideNav*
+  - Feed*
+  - FluffColumn*
+  - ChatIndexContainer*
 
 **NavBar**
- - Logo (Link)
- - SearchContainer
-  + SearchBar
-  + SearchResultsIndex (drop-down from SearchBar)
-   - SearchResult
- - RightNav
-  + Profile (Link)
-  + Home (Link)
-  + FriendRequestsIndex (drop-down)
-   - FriendRequest
-  + MessagesIndex (drop-down)
-   - Message
-  + NotificationsIndex (drop-down)
-   - Notification
+  - Logo (Link)
+  - SearchContainer
+    - SearchBar
+    - SearchResultsIndex (drop-down from SearchBar)
+      - SearchResult
+  - RightNav
+    - Profile (Link)
+    - Home (Link)
+    - FriendRequestsIndex (drop-down)
+      - FriendRequest
+  - MessagesIndex (drop-down)
+    - Message
+  - NotificationsIndex (drop-down)
+    - Notification
 
 **Feed**
- - CreatePostContainer
-  + CreatePostForm
- - PostsContainer
-  + PostsIndex
-   - Post
-    + LikesBar
-    + CommentsContainer
-     - CommentsIndex (default max 2)
-      - Comment
-     - CommentForm
+  - CreatePostContainer
+    - CreatePostForm
+  - PostsContainer
+    - PostsIndex
+      - Post
+        - LikesBar
+        - CommentsContainer
+          - CommentsIndex (default max 2)
+            - Comment
+          - CommentForm
 
 **ProfilePage**
- - ProfileHeader
-  - CoverPhoto
-  - ProfilePhoto
-  - ProfileNavBar
-  - Edit (button)
- - Timeline
-  + SideInfo
-   - Intro
-   - SidePhotos
-   - SideFriends
-  + Feed*
- - About (BONUS)
-  + Overview
-  + Friends
-  + Photos
-  + Details
- - Friends
- - Photos
+  - ProfileHeader
+    - CoverPhoto
+    - ProfilePhoto
+    - ProfileNavBar
+    - Edit (button)
+  - MainContainer
+    - Timeline
+      - SideInfo
+        - Intro
+        - SidePhotos
+        - SideFriends
+      - Feed*
+    - About (BONUS)
+      -  Overview
+      - Friends
+      - Photos
+      - Details
+    - Friends
+    - Photos
 
 **ChatBox** (BONUS Pop-up)
- - ChatMessages
- - ChatForm
+  - ChatMessages
+  - ChatForm
 
 **ChatIndexContainer** (BONUS)
- - ChatIndex
-  + ChatIndexItem
- - SearchBar
+  - ChatIndex
+    - ChatIndexItem
+  - SearchBar
 
 **FluffColumn** (BONUS)
- - AdContainer
-  + AdItem (Links to my info/classmates' projects)
- - TrendingContainer
-  + TrendingItem
- - NotificationsBox
+  - AdContainer
+    - AdItem (Links to my info/classmates' projects)
+  - TrendingContainer
+    - TrendingItem
+  - NotificationsBox
 
 **SideNav** (BONUS)
- - Profile (Link)
- - Home (Link)
- - Professional Links
+  - Profile (Link)
+  - Home (Link)
+  - Professional Links
 
 ## Routes
 
