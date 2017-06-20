@@ -2,7 +2,7 @@ class User < ApplicationRecord
   validates_presence_of :session_token, :password_digest, :email,
                         :first_name, :last_name, :dob, :gender
   validates_uniqueness_of :session_token, :email
-  validates :password, length: { minimum: 6, allow_nil: true }
+  validates :password, length: { minimum: 6 }, allow_nil: true
 
   attr_reader :password
 
@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   def password=(pw)
     @password = pw
-    self.password_digest = generate_session_token
+    self.password_digest = BCrypt::Password.create(pw)
   end
 
   def is_password?(pw)
@@ -19,7 +19,6 @@ class User < ApplicationRecord
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
-
     return nil unless user
     user.is_password?(password) ? user : nil
   end
@@ -37,7 +36,7 @@ class User < ApplicationRecord
   private
 
   def ensure_session_token
-    self.password_digest ||= generate_session_token
+    self.session_token ||= generate_session_token
   end
 
 end
