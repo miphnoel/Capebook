@@ -1,3 +1,4 @@
+```js
 {
   session: {
     currentUser: {
@@ -121,3 +122,4 @@
   },
   notificationCount: 1
 }
+```
