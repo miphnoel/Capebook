@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-MaskNook is a web application inspired by Facebook built using Ruby on Rails
+Capebook is a web application inspired by Facebook built using Ruby on Rails
 and React/Redux.  By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 baller CSS styling:
