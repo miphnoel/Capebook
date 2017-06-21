@@ -15,7 +15,7 @@ body {
 
 #root {
   font-family: "San Francisco", -apple-system, BlinkMacSystemFont, '.SFNSTet-Regular', sans-serif;
-  background-color: #e9ebee;
+  background-color: #fff;
   height: 100%;
   width: 100%;
 }
@@ -98,6 +98,9 @@ small {
 	object-fit: cover;
 }
 
+i:hover {
+  text-decoration: none;
+}
 /*
 	Inputs
 */

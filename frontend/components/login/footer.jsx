@@ -13,15 +13,28 @@ class Footer extends React.Component {
     );
   }
 
+  loginJoker() {
+    this.props.login(
+      {email: 'whysoserious@clownshoes.gotham', password: 'harley'}
+    );
+  }
+
   render() {
     return (
       <footer>
-        <a href='https://github.com/miphnoel'>
-          <i className="fa fa-github fa-lg" aria-hidden="true"></i>
-        </a>
-        <button onClick={() => this.loginBatman()}>
-          Log in as BATMAN
-        </button>
+        <div className="my-links">
+          <a href='https://github.com/miphnoel'>
+            <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+        </div>
+        <div className="guest-logs">
+          <button onClick={() => this.loginBatman()}>
+            Log in as BATMAN
+          </button>
+          <button onClick={() => this.loginJoker()}>
+            Log in as THE JOKER
+          </button>
+      </div>
       </footer>
     );
   }
