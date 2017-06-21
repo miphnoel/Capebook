@@ -27,9 +27,9 @@ export const login = (user) => dispatch => {
          );
 };
 
-export const logout = (user) => dispatch => {
-  return APIUtil.logout(user)
-    .then(user => dispatch(receiveCurrentUser(null)),
+export const logout = () => dispatch => {
+  return APIUtil.logout()
+    .then(() => dispatch(receiveCurrentUser(null)),
           err => dispatch(receiveErrors(err.responseJSON))
          );
 };

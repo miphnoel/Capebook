@@ -1,0 +1,121 @@
+html {
+	position: relative;
+  height: 100%;
+}
+
+body {
+  background: #fff;
+  color: #1d2129;
+  line-height: 1.34;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+#root {
+  font-family: "San Francisco", -apple-system, BlinkMacSystemFont, '.SFNSTet-Regular', sans-serif;
+  background-color: #e9ebee;
+  height: 100%;
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  width: 80%;
+  margin: auto;
+}
+
+body, button, input, label, select, td, textarea {
+	width: 100%;
+	margin: 0 auto;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 12px;
+}
+
+button {
+	color: white;
+	border-radius: 3px;
+	transition: background-color 0.3s;
+	text-align: center;
+}
+
+nav {
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+.hidden {
+	display: none;
+}
+
+/*
+	Font Elements
+*/
+
+h1 {
+	font-size: 36px;
+	font-weight: bold;
+  font-family: "Freight Sans Bold", inherit;
+}
+
+h2 {
+	margin-bottom: 10px;
+  font-size: 19px;
+}
+
+p {
+	line-height: 16px;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+}
+
+small {
+	font-size: 9px;
+}
+
+/*
+	Images
+*/
+
+.thumbnail {
+	height: 100px;
+}
+
+.thumbnail img {
+	object-fit: cover;
+}
+
+/*
+	Inputs
+*/
+
+input {
+	font-family: inherit;
+	padding: 0 10px;
+	border: 1px solid gray;
+  background-color: white;
+  color: black;
+}
+
+input[type="search"] {
+	padding: 5px;
+}
+
+label {
+  cursor: pointer;
+}
