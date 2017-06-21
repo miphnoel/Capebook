@@ -1,10 +1,10 @@
 # Capebook
 
-[Heroku link][heroku] Eventually
+[Heroku link][heroku]
 
-[Trello link][trello] Eventually
+[Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: http://capebook.herokuapp.com
 [trello]: https://trello.com/b/g2OMGOFX/capebook
 
 ## Minimum Viable Product
