@@ -7,10 +7,8 @@ body {
   background: #fff;
   color: #1d2129;
   line-height: 1.34;
-  margin: 0;
   padding: 0;
   height: 100%;
-  width: 100%;
   overflow-y: scroll;
   -webkit-font-smoothing: subpixel-antialiased;
 }
@@ -24,7 +22,7 @@ body {
 
 .content {
   display: flex;
-  width: 80%;
+  width: 980px;
   margin: auto;
 }
 
@@ -110,11 +108,17 @@ input {
 	border: 1px solid gray;
   background-color: white;
   color: black;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: -webkit-focus-ring-color auto 5px;
 }
 
 input[type="search"] {
 	padding: 5px;
 }
+
 
 label {
   cursor: pointer;

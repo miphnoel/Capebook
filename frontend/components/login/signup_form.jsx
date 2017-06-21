@@ -6,10 +6,10 @@ class SignupForm extends React.Component {
     super(props);
 
     this.state = {
-      first_name: 'First name',
-      last_name: 'Last name',
-      email: 'Email',
-      password: 'New Password',
+      first_name: '',
+      last_name: '',
+      email: '',
+      password: '',
       dob: '03/02/1991',
       gender: 'Male'
     }
@@ -32,22 +32,25 @@ class SignupForm extends React.Component {
   }
 
   render () {
+    const placeholder = this.props.signup_default;
     return (
       <div>
-        <h1>Create a New Account</h1>
+        <h1>Sign Up</h1>
         <h2>It's free and always will be.</h2>
         <form className="signup-form" onSubmit={this.handleSubmit}>
-          <section className="input-names">  
+          <section className="input-names">
             <input
               name="first_name"
               type="text"
               value={this.state.first_name}
+              placeholder={placeholder.first_name}
               onChange={this.update('first_name')}>
             </input>
             <input
               name="last_name"
               type="text"
               value={this.state.last_name}
+              placeholder={placeholder.last_name}
               onChange={this.update('last_name')}>
             </input>
           </section>
@@ -55,14 +58,17 @@ class SignupForm extends React.Component {
             name="email"
             type="text"
             value={this.state.email}
+            placeholder={placeholder.email}
             onChange={this.update('email')}>
           </input>
           <input
             name="password"
             type="password"
             value={this.state.password}
+            placeholder={placeholder.password}
             onChange={this.update('password')}>
           </input>
+          <br />
           <button type="Submit">Create Account</button>
         </form>
       </div>

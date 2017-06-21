@@ -9,12 +9,13 @@ import {
 
 import Login from './login/login';
 import Home from './home';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
   <div>
     <Switch>
-      <Route path="/login" component={Login} />
-      <Route exact path="/" component={Home} />
+      <AuthRoute path="/login" component={Login} />
+      <ProtectedRoute exact path="/" component={Home} />
     </Switch>
   </div>
 );
