@@ -1,17 +1,17 @@
-User.create({
+User.create(
   first_name: 'Bruce',
   last_name: 'Wayne',
-  email: 'brucewayne@wayne.gotham',
+  email: 'brucewayne@gotham.bat',
   password: 'alfred',
   dob: '02/19/1939',
   alignment: 'hero'
-});
+)
 
-User.create({
+User.create(
   first_name: 'Jack',
   last_name: 'Napier',
-  email: 'whysoserious@clownprince.gotham',
+  email: 'whysoserious@prince.pain',
   password: 'harley',
   dob: '04/25/1940',
   alignment: 'villain'
-});
+)
