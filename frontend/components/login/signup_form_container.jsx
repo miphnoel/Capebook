@@ -4,7 +4,8 @@ import { signup } from '../../actions/session_actions';
 import SignupForm from './signup_form';
 
 const mapStateToProps = ({ form }) => ({
-  signup_default: form.signup
+  placeholders: form.signup.placeholders,
+  errors: form.signup.errors
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -94,12 +94,14 @@ h2 {
 }
 
 .signup-form {
+  width: 399px;
+
   input {
     border: 1px solid #bdc7d8;
     border-radius: 5px;
     font-size: 18px;
     padding: 8px 10px;
-    width: 399px;
+    width: 100%;
   }
 
   button {
@@ -122,12 +124,52 @@ h2 {
   button:hover {
     background: linear-gradient(#79bc64, #578843);
   }
+
+  .name-errors {
+    display: flex;
+    width: 100%;
+
+    :last-child {
+      padding-left: 12px;
+    }
+  }
+
+  .invalid {
+    border-color: red;
+  }
+
+  .alignment {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    margin-top: 10px;
+
+    .radio {
+      display: flex;
+      align-items: center;
+      margin: 0 4px;
+      padding: 5px 0 5px 4px;
+
+      input {
+        -webkit-appearance: radio;
+        margin: 3px;
+        box-sizing: border-box;
+        width: 20px;
+        height: 13px;
+        padding: 0;
+      }
+
+      label {
+        font-size: 18px;
+        padding: 0 5px 0 3px;
+      }
+    }
+  }
 }
 
 
 .input-names {
   display: flex;
-  justify-content: space-between;
   width: 399px;
 
   :first-child {

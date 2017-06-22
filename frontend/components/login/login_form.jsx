@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -23,8 +22,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.login(user)
-      .then(() => this.props.history.push('/'));
+    this.props.login(user);
   }
 
   render () {
@@ -51,6 +49,7 @@ class LoginForm extends React.Component {
           </input>
         </div>
         <div>
+          <div className="errors">{this.props.errors}</div>
           <button type="Submit">Log in</button>
         </div>
       </form>
@@ -58,4 +57,4 @@ class LoginForm extends React.Component {
   }
 }
 
-export default withRouter(LoginForm);
+export default LoginForm;
