@@ -10,7 +10,7 @@ const defaultState = {
       email: "Email",
       password: "New password",
       dob: "01/01/2001",
-      gender: "Male"
+      alignment: "hero"
     },
     errors: []
   },

@@ -10,7 +10,7 @@ session_token   | string    | not null, indexed, unique
 first_name      | string    | not null
 last_name       | string    | not null
 dob             | date      | not null
-gender          | string    | not null
+alignment          | string    | not null
 cover_photo     | string    |
 profile_picture | string    |
 phone           | string    |

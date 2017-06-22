@@ -38,7 +38,7 @@
     cover_pic: 'catinpajamas.jpg',
     details: {
       dob: '12/25/00',
-      gender: 'Male',
+      alignment: 'hero',
       phone: "555-867-5309",
       education: "App Academy",
       relationship: "It's Complicated",

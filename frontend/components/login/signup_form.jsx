@@ -12,14 +12,13 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       dob: '03/02/1991',
-      gender: 'Male',
-      alignment: "hero",
+      alignment: 'hero',
       errors: {}
     }
 
     this.requiredFields = [
       'first_name', 'last_name', 'email',
-      'password', 'dob', 'gender'
+      'password', 'dob', 'alignment'
     ];
     this.validEmail = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
     this.handleSubmit = this.handleSubmit.bind(this);
