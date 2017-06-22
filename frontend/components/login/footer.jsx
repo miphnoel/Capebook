@@ -8,14 +8,15 @@ class Footer extends React.Component {
   }
 
   loginBatman() {
+    
     this.props.login(
-      {email: 'brucewayne@wayne.gotham', password: 'alfred'}
+      {email: 'brucewayne@gotham.bat', password: 'alfred'}
     );
   }
 
   loginJoker() {
     this.props.login(
-      {email: 'whysoserious@clownprince.gotham', password: 'harley'}
+      {email: 'whysoserious@prince.pain', password: 'harley'}
     );
   }
 
