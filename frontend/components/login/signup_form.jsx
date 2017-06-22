@@ -95,7 +95,6 @@ class SignupForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger
     if (this.isValid()) {
       const user = {};
       this.requiredFields.forEach(field => user[field] = this.state[field]);
