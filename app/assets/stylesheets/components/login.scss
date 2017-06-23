@@ -1,32 +1,29 @@
 .login-page {
   height: 100%;
-  background: #e9ebee;
-}
+  background: $light-grey;
 
-nav {
-  min-height: 42px;
-  align-items: center;
-  padding: 13px 0 6px;
-  margin-bottom: 20px;
-
-  h1 {
-    color: white;
-    position: relative;
-    top: 10px;
-    margin-right: 10px;
+  .main-content {
+    height: 600px;
   }
 
-  .header-content {
-    width: 980px;
-    display: flex;
-    justify-content: space-between;
-    margin: auto;
+  nav {
+    padding: 13px 0 6px;
+    margin-bottom: 20px;
+
+    h1 {
+      color: white;
+      position: relative;
+      top: 10px;
+      margin-right: 10px;
+    }
   }
 }
+
 
 input {
   margin-bottom: 10px;
   padding-bottom: 4px;
+  color: $text-black;
 }
 
 section div {
@@ -223,12 +220,7 @@ h2 {
   }
 }
 
-.main-content {
-  display: flex;
-  height: 600px;
-  width: 980px;
-  margin: auto;
-}
+
 
 footer {
   background: white;

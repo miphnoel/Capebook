@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import LoginFormContainer from './login_form_container';
 import SignupFormContainer from './signup_form_container';
@@ -8,9 +9,9 @@ import { login } from '../../actions/session_actions';
 
 const Login = (props) => (
   <div className="login-page">
-    <nav className="login-nav">
-      <div className="header-content">
-        <h1>capebook</h1>
+    <nav className="nav-bar">
+      <div className="nav-content">
+        <Link to='/'><h1>capebook</h1></Link>
         <LoginFormContainer />
       </div>
     </nav>

@@ -1,2 +1,1 @@
-json.id user.id
-json.name "#{user.first_name} #{user.last_name}"
+json.extract! user, :id, :first_name, :last_name, :email

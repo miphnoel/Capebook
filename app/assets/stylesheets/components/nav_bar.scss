@@ -1,0 +1,144 @@
+.nav-bar {
+  min-height: 42px;
+  background-color: $header-lblue;
+  background-image: linear-gradient($header-dblue, $header-lblue 50%);
+  border-bottom: 1px solid #133783;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  align-items: center;
+
+	.nav-content {
+    width: 1012px;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  a:hover {
+      text-decoration: none;
+    }
+}
+
+.left-nav {
+  display: flex;
+  align-items: center;
+  flex-grow: 2;
+}
+
+.right-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+
+  div {
+    display: flex;
+    align-items: center;
+
+    a:hover, button:hover {
+      background-color: #29487d;
+    }
+  }
+
+
+}
+
+.nav-links {
+  display: flex;
+  height: 27px;
+  align-items: center;
+
+  .profile-link a {
+    border-right: 1px solid #29487d;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+
+    a {
+      padding: 8px 10px;
+      border-radius: 2px;
+
+      i {
+        border-radius: 2px;
+        margin: 2px 6px 2px -8px;
+      }
+
+      span {
+        margin: auto;
+      }
+    }
+
+
+  }
+}
+
+.drop-downs {
+  padding: 0 10px;
+  margin: 0 10px;
+
+  i {
+    margin: 5px;
+    padding: 0 3px 3px 0;
+    font-size: 22px;
+    color: #152135;
+  }
+}
+
+.log-out button {
+  padding: 8px 10px;
+  border-left: 1px solid #29487d;
+}
+
+.search-bar {
+  display: flex;
+  height: 23px;
+  flex: 2;
+  max-width: 440px;
+
+  input {
+    flex: 2;
+    text-overflow: ellipsis;
+    margin: 0 0 0 4px;
+    padding: 1px;
+    text-indent: 3px;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 2px 0 0 2px;
+    color: $text-black;
+    outline: none;
+    font-size: 14px;
+  }
+
+  button {
+    background: #f6f7f9;
+    border-radius: 0 2px 2px 0;
+    border-left: 0;
+    width: 46px;
+    padding: 0 16px;;
+    box-sizing: border-box;
+    color: #4b4f56;
+    white-space: nowrap;
+    transition: 200ms cubic-bezier(.08,.52,.52,1) background-color,
+                200ms cubic-bezier(.08,.52,.52,1) box-shadow,
+                200ms cubic-bezier(.08,.52,.52,1) transform;
+
+  }
+
+  .in-search {
+    background: #4080ff;
+    transform: scale(.98);
+    box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+  }
+
+  button:hover {
+    background: $light-grey;
+  }
+
+  button:active {
+
+  }
+}
