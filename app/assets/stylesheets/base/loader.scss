@@ -1,16 +1,16 @@
 .loader {
-  font-size: 10px;
+  font-size: 12px;
   margin: 50px auto;
   text-indent: -9999em;
-  width: 9em;
-  height: 9em;
+  width: 4em;
+  height: 4em;
   border-radius: 50%;
-  background: #ffffff;
-  background: -moz-linear-gradient(left, $header-lblue 10%, rgba(255, 255, 255, 0) 42%);
-  background: -webkit-linear-gradient(left, $header-lblue 10%, rgba(255, 255, 255, 0) 42%);
-  background: -o-linear-gradient(left, $header-lblue 10%, rgba(255, 255, 255, 0) 42%);
-  background: -ms-linear-gradient(left, $header-lblue 10%, rgba(255, 255, 255, 0) 42%);
-  background: linear-gradient(to right, $header-lblue 10%, rgba(255, 255, 255, 0) 42%);
+  background: $header-lblue;
+  background: -moz-linear-gradient(left, $header-dblue 10%, rgba(255, 255, 255, 0) 42%);
+  background: -webkit-linear-gradient(left, $header-dblue 10%, rgba(255, 255, 255, 0) 42%);
+  background: -o-linear-gradient(left, $header-dblue 10%, rgba(255, 255, 255, 0) 42%);
+  background: -ms-linear-gradient(left, $header-dblue 10%, rgba(255, 255, 255, 0) 42%);
+  background: linear-gradient(to right, $header-dblue 10%, rgba(255, 255, 255, 0) 42%);
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
@@ -21,7 +21,7 @@
 .loader:before {
   width: 50%;
   height: 50%;
-  background: #ffffff;
+  background: $header-dblue;
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;

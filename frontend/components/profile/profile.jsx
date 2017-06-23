@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import NavBarContainer from '../shared/nav_bar_container';
 import ProfileHeader from './profile_header';
+import Intro from './intro';
 
 class Profile extends React.Component {
   constructor(props) {
@@ -31,13 +32,15 @@ class Profile extends React.Component {
 
   render() {
     const user = this.props.user;
-    debugger
+
     if (this.state.loading) {
       return (
         <div className="profile-page">
           <NavBarContainer />
           <div className="main-content">
-            <div className="loader">Retrieving Intel...</div>
+            <div className="profile-content">
+              <div className="loader">Retrieving Intel...</div>
+            </div>
           </div>
         </div>
       );
@@ -46,8 +49,10 @@ class Profile extends React.Component {
           <div className='profile-page'>
             <NavBarContainer />
             <div className="main-content">
-              <h1>Profile</h1>
-              <ProfileHeader user={user}/>
+              <div className="profile-content">
+                <ProfileHeader user={user} />
+                <Intro user={user} />
+              </div>
             </div>
           </div>
         );
@@ -56,7 +61,7 @@ class Profile extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+
   return ({
   currentUser: state.session.currentUser,
   userId: ownProps.match.params.userId,

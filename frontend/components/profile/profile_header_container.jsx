@@ -5,7 +5,7 @@ import { fetchUser } from '../../actions/user_actions';
 import ProfileHeader from './profile_header';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
+  
   return ({
   userId: ownProps.userId,
   user: state.user
