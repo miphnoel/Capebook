@@ -2,13 +2,15 @@ batdob = DateTime.new(1939, 2, 19)
 jokerdob = DateTime.new(1940, 4, 25)
 
 bat_prof = File.open("app/assets/images/bruce_wayne.jpg")
-bat_cover = File.open("app/assets/images/batman_cover.jpg")
+bat_cover = File.open("app/assets/images/batman_cover.png")
 
 joker_prof = File.open("app/assets/images/joker.jpg")
 joker_cover = File.open("app/assets/images/joker_cover.jpg")
 
 
-User.create(
+User.destroy_all
+
+User.create!(
   first_name: 'Bruce',
   last_name: 'Wayne',
   email: 'brucewayne@gotham.bat',
@@ -19,7 +21,7 @@ User.create(
   cover_pic: bat_cover
 )
 
-User.create(
+User.create!(
   first_name: 'Jack',
   last_name: 'Napier',
   email: 'whysoserious@prince.pain',
