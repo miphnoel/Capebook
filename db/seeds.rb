@@ -7,7 +7,9 @@ User.create(
   email: 'brucewayne@gotham.bat',
   password: 'alfred',
   dob: batdob,
-  alignment: 'hero'
+  alignment: 'hero',
+  prof_pic_file_name: "bruce_wayne.jpg",
+  cover_pic_file_name: "batman_cover.png"
 )
 
 User.create(
@@ -16,5 +18,7 @@ User.create(
   email: 'whysoserious@prince.pain',
   password: 'harley',
   dob: jokerdob,
-  alignment: 'villain'
+  alignment: 'villain',
+  prof_pic_file_name: "joker.jpg",
+  cover_pic_file_name: "joker_cover.jpg"
 )

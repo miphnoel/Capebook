@@ -19,12 +19,11 @@
 #
 
 class User < ApplicationRecord
-  has_attached_file :prof_pic, default_url: "missing.png"
-
-  validates_attachment_content_type :prof_pic,
-                                    content_type: /^image\/(png|jpeg)/,
-                                    message: 'only .png or .jpeg'
-
+  has_attached_file :prof_pic,
+    default_url: "missing.jpg"
+  has_attached_file :cover_pic,
+    default_url: "default_cover.jpg"
+  validates_attachment_content_type :prof_pic, content_type: /\Aimage\/.*\Z/
   validates_presence_of :session_token, :password_digest, :email,
                         :first_name, :last_name, :dob, :alignment
   validates_uniqueness_of :session_token, :email

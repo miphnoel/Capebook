@@ -49,7 +49,7 @@ class LoginForm extends React.Component {
           </input>
         </div>
         <div>
-          <div className="errors">{this.props.errors}</div>
+          <div className="errors above-login">{this.props.errors}</div>
           <button type="Submit">Log in</button>
         </div>
       </form>

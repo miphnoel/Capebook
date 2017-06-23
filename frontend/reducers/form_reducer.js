@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_LOGIN_ERRORS, RECEIVE_SIGNUP_ERRORS, CLEAR_ERRORS } from '../actions/form_actions';
+import { RECEIVE_LOGIN_ERRORS, RECEIVE_SIGNUP_ERRORS, CLEAR_FORM_ERRORS } from '../actions/form_actions';
 
 const defaultState = {
   signup: {
@@ -27,10 +27,8 @@ const FormReducer = (state = defaultState, action) => {
       return merge({}, state, {signup: {errors: action.errors}});
     case RECEIVE_LOGIN_ERRORS:
       return merge({}, state, {login: {errors: action.errors}});
-    case CLEAR_ERRORS:
-      const loginErrors = {login: {errors: []}};
-      const signupErrors = {signup: {errors: []}};
-      return merge({}, state, loginErrors, signupErrors);
+    case CLEAR_FORM_ERRORS:
+      return defaultState;
     default:
       return state;
     }

@@ -4,11 +4,16 @@
 
   .main-content {
     height: 600px;
+    width: 980px;
   }
 
   nav {
     padding: 13px 0 6px;
     margin-bottom: 20px;
+
+    .nav-content {
+      width: 980px;
+    }
 
     h1 {
       color: white;
@@ -88,6 +93,12 @@ h2 {
     border-color: #29487d;
   }
 
+}
+
+.above-login {
+  position: absolute;
+  bottom: 40px;
+  padding-left: 4px;
 }
 
 .signup-form {

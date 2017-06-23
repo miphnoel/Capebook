@@ -3,9 +3,11 @@ import React from 'react';
 class ProfileHeader extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   render() {
+    debugger
     return (
       <div className="profile-header">
         <div className="cover-photo-box">

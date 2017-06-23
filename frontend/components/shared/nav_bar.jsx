@@ -24,7 +24,7 @@ class NavBar extends React.Component {
           <div className="right-nav">
             <div className="nav-links">
               <div className="profile-link">
-                <Link to={`/api/users/${currentUser.id}`}>
+                <Link to={`/profile/${currentUser.id}`}>
                   <i className="fa fa-user-o fa-lg" aria-hidden="true"></i>
                   <span>{currentUser.first_name}</span>
                 </Link>
