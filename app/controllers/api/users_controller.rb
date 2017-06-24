@@ -2,7 +2,7 @@ class Api::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   def index
-    # @users = User.where(search_params)
+    @users = User.all
   end
 
 

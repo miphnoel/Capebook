@@ -12,7 +12,7 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       dob: '03/02/1991',
-      alignment: 'hero',
+      alignment: 'Hero',
       errors: {}
     }
 
@@ -160,9 +160,9 @@ class SignupForm extends React.Component {
             <span className="radio">
               <input
                 type="radio"
-                value="hero"
-                checked={this.state.alignment === "hero"}
-                onChange={this.chooseSide("hero")}
+                value="Hero"
+                checked={this.state.alignment === "Hero"}
+                onChange={this.chooseSide("Hero")}
                 />
               <label>
                 Hero
@@ -171,9 +171,9 @@ class SignupForm extends React.Component {
             <span className="radio">
               <input
                 type="radio"
-                value="villain"
-                checked={this.state.alignment === "villain"}
-                onChange={this.chooseSide("villain")}
+                value="Villain"
+                checked={this.state.alignment === "Villain"}
+                onChange={this.chooseSide("Villain")}
                 />
               <label>
                 Villain

@@ -3,13 +3,13 @@ import { connect } from 'react-redux';
 
 import { fetchUser } from '../../actions/user_actions';
 import NavBarContainer from '../shared/nav_bar_container';
-import ProfileHeader from './profile_header';
-import Intro from './intro';
+import ProfileContent from './profile_content';
+
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-
+    
     this.state = {loading: true};
   }
 
@@ -32,40 +32,30 @@ class Profile extends React.Component {
 
   render() {
     const user = this.props.user;
+    let comp;
 
     if (this.state.loading) {
-      return (
-        <div className="profile-page">
-          <NavBarContainer />
-          <div className="main-content">
-            <div className="profile-content">
-              <div className="loader">Retrieving Intel...</div>
-            </div>
-          </div>
-        </div>
-      );
+      comp = <div className="loader">Retrieving Intel...</div>
     } else {
-        return (
-          <div className='profile-page'>
-            <NavBarContainer />
-            <div className="main-content">
-              <div className="profile-content">
-                <ProfileHeader user={user} />
-                <Intro user={user} />
-              </div>
-            </div>
-          </div>
-        );
+      comp = <ProfileContent user={user} />
     }
+
+    return (
+      <div className="profile-page">
+        <NavBarContainer />
+        <div className="main-content">
+          {comp}
+        </div>
+      </div>
+    );
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-
   return ({
   currentUser: state.session.currentUser,
   userId: ownProps.match.params.userId,
-  user: state.user
+  user: state.users.showUser
 })};
 
 const mapDispatchToProps = (dispatch) => ({

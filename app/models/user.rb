@@ -28,7 +28,7 @@ class User < ApplicationRecord
                         :first_name, :last_name, :dob, :alignment
   validates_uniqueness_of :session_token, :email
   validates :password, length: { minimum: 6 }, allow_nil: true
-  validates :alignment, inclusion: { in: ['hero', 'villain']}
+  validates :alignment, inclusion: { in: ['Hero', 'Villain']}
 
   attr_reader :password
 

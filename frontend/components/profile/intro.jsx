@@ -1,12 +1,17 @@
 import React from 'react';
 
 const Intro = ({ user }) => {
-  const details = Object.keys(user).map(key => <li>{key}: {user[key]}</li>)
+
 
   return (
     <div className="intro">
+      <div className="intro-header">
+        <i className="fa fa-globe globe" aria-hidden="true"></i>
+        <span>Intro</span>
+      </div>
       <ul className="user-details">
-        {details}
+        <li>Birthday: {user.dob}</li>
+        <li>Alignment: {user.alignment}</li>
       </ul>
     </div>
   );
