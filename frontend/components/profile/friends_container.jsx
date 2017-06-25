@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import values from 'lodash/values';
 
-import { fetchUsers } from '../../actions/user_actions';
+import { fetchFriends } from '../../actions/user_actions';
 import Friends from './friends';
 
 const mapStateToProps = (state) => ({
@@ -9,8 +9,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-
-  fetchUsers: () => dispatch(fetchUsers())
+  fetchFriends: () => dispatch(fetchFriends())
 });
 
 export default connect(

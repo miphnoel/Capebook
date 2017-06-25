@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 
-import { fetchUser } from '../../actions/user_actions';
+import { openModal } from '../../actions/modal_actions';
 
 import ProfileHeader from './profile_header';
 
-const mapStateToProps = (state, ownProps) => {
-  
-  return ({
-  userId: ownProps.userId,
-  user: state.user
+const mapStateToProps = ({ users, modal }) => {
+
+  return({
+  user: users.showUser,
+  editVisible: modal.editProfile,
 })};
 
 const mapDispatchToProps = dispatch => ({
-  fetchUser: (id) => dispatch(fetchUser(id))
+  openModal: (modal) => dispatch(openModal(modal))
 });
 
 export default connect(

@@ -1,15 +1,16 @@
 import * as APIUtil from '../util/user_api_util';
 
 export const RECEIVE_USER = "RECEIVE_USER";
-export const RECEIVE_USERS = "RECEIVE_USERS";
+export const RECEIVE_FRIENDS = "RECEIVE_FRIENDS";
+
 
 export const receiveUser = (user) => ({
   type: RECEIVE_USER,
   user
 });
 
-export const receiveUsers = (users) => ({
-  type: RECEIVE_USERS,
+export const receiveFriends = (users) => ({
+  type: RECEIVE_FRIENDS,
   users
 })
 
@@ -18,8 +19,17 @@ export const fetchUser = (id) => (dispatch) => {
     .then(user => dispatch(receiveUser(user)));
 }
 
-export const fetchUsers = () => (dispatch) => {
-  
-  return APIUtil.fetchUsers()
-    .then(users => dispatch(receiveUsers(users)));
+export const fetchFriends = () => (dispatch) => {
+  return APIUtil.fetchFriends()
+    .then(users => dispatch(receiveFriends(users)));
+}
+
+export const updateUser = (user) => (dispatch) => {
+  return APIUtil.updateUser()
+    .then(user => dispatch(receiveUser(user)));
+}
+
+export const updateProfile = (id, profile) => (dispatch) => {
+  return APIUtil.updateProfile(id, profile)
+    .then(user => dispatch(receiveUser(user)));
 }

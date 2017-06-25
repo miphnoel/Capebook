@@ -1,4 +1,5 @@
 .home-page {
   height: 100vh;
-  background: $light-grey;
+  display: flex;
+  flex-direction: column;
 }

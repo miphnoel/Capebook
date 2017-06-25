@@ -43,29 +43,22 @@ class SignupForm extends React.Component {
             this.setState({'errors': merge(
               this.state.errors, {[field]: "Please give your (real) name."}
             )});
-          } else {
-            this.clearError(field)();
-          }
-        break;
-      break;
+          } else this.clearError(field)();
+          break;
         case 'email':
           if (!this.state.email.match(this.validEmail)) {
           this.setState({'errors': merge(
             this.state.errors, {'email': "Please enter a valid email address."}
           )});
-        } else {
-          this.clearError(field)();
-        }
-        break;
+          } else this.clearError(field)();
+          break;
         case 'password':
           if (this.state.password.length < 6) {
             this.setState({'errors': merge(
               this.state.errors, {'password': "Password must be at least 6 characters"}
             )});
-          } else {
-            this.clearError(field)();
-          }
-        break;
+          } else this.clearError(field)();
+          break;
       }
     }
   }

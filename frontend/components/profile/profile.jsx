@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import NavBarContainer from '../shared/nav_bar_container';
 import ProfileContent from './profile_content';
+import EditProfileForm from './edit_profile_form';
 
 
 class Profile extends React.Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {loading: true};
   }
 

@@ -9,13 +9,13 @@ body {
   line-height: 1.34;
   padding: 0;
   height: 100%;
+	background-color: $light-grey;
   overflow-y: scroll;
   -webkit-font-smoothing: subpixel-antialiased;
 }
 
 #root {
   font-family: "San Francisco", -apple-system, BlinkMacSystemFont, '.SFNSTet-Regular', sans-serif;
-  background-color: #fff;
   height: 100%;
   width: 100%;
 }
@@ -71,6 +71,7 @@ p {
 img {
 	width: 100%;
 	height: 100%;
+	object-fit: cover;
 }
 
 /*

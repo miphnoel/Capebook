@@ -1,15 +1,15 @@
 import React from 'react';
 
-import ProfileHeader from './profile_header';
+import ProfileHeaderContainer from './profile_header_container';
 import InfoColumn from './info_column';
 import Timeline from './timeline';
 
-const ProfileContent = ({ user }) => {
+const ProfileContent = ({ user, currentUser }) => {
   return (
     <div className="profile-content">
-      <ProfileHeader user={user} />
+      <ProfileHeaderContainer />
       <div className="profile-bottom">
-        <InfoColumn user={user} />
+        <InfoColumn />
         <Timeline userId={user.id} />
       </div>
     </div>

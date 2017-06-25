@@ -4,11 +4,10 @@ import Intro from './intro';
 import FriendsContainer from './friends_container';
 
 const InfoColumn = (props) => {
-  const user = props.user;
   return (
     <div className="info-column">
-      <Intro user={user} />
-      <FriendsContainer user={user} />
+      <Intro />
+      <FriendsContainer />
       <div className="photos">
         Photos
       </div>

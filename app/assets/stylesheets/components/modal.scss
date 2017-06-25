@@ -1,0 +1,144 @@
+.modal-frame {
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  display: flex;
+}
+
+.edit-profile-form {
+  width: 650px;
+  background: white;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, .3), 0 0 0 1px rgba(0, 0, 0, .1);
+  margin: auto;
+  border-radius: 3px;
+  background: $lighter-back-grey;
+
+  input {
+    padding: 8px;
+    text-align: center;
+    border: none;
+    margin: 0;
+
+    &:focus {
+      padding: 8px 0;
+      border: none;
+    }
+  }
+}
+
+.edit-pics {
+  height: 280px;
+  width: 650px;
+  border: none;
+  position: relative;
+
+  i {
+    color: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    padding: 3px;
+  }
+}
+
+.edit-cover-pic {
+  height: 100%;
+
+  i {
+    font-size: 20px;
+    left: 7px;
+    top: 7px;
+  }
+}
+
+.edit-prof-pic {
+  border: 2px solid white;
+  border-radius: 2px;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  height: 134px;
+  width: 134px;
+
+  i {
+    font-size: 16px;
+    left: 4px;
+    bottom: 4px;
+  }
+}
+
+.button-box {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  border-top: 1px solid #e5e5e5;
+
+  button {
+    background: $content-lblue;
+    border: 1px solid $content-lblue;
+    border-radius: 2px;
+    padding: 2px 8px;
+    color: white;
+    width: 30px;
+    letter-spacing: normal;
+    margin: 5px auto;
+    box-sizing: content-box;
+
+
+    &:hover {
+      background: $content-blue;
+      border: $content-blue;
+      padding: 3px 9px;
+      box-shadow: 0 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+      transition: 200ms background-color, 200ms box-shadow;
+      box-sizing: content-box;
+    }
+  }
+}
+
+.edit-header {
+  border-bottom: 1px solid #e5e5e5;
+  border-radius: 3px 3px 0 0 ;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px 12px;
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.edit-label {
+  display: flex;
+  align-items: center;
+  padding: 12px 8px;
+  border: 1px solid #dddfe2;
+  border-radius: 3px 3px 0 0;
+  font-size: 14px;
+  box-sizing: border-box;
+
+  i {
+    margin-right: 8px;
+    height: 16px;
+  }
+
+  h3 {
+    margin: 0;
+  }
+}
+
+.picture-modal {
+  z-index: 3;
+}
+
+.edit-picture-form {
+  background: white;
+  border-radius: 3px;
+  width: 775px;
+  height: 600px;
+  margin: auto;
+}

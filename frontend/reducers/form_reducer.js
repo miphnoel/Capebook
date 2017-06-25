@@ -17,7 +17,11 @@ const defaultState = {
 
   login: {
     errors: []
-  }
+  },
+
+  updateProfile: {
+    errors: []
+  },
 }
 
 const FormReducer = (state = defaultState, action) => {

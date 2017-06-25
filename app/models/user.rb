@@ -19,20 +19,22 @@
 #
 
 class User < ApplicationRecord
-  has_attached_file :prof_pic,
-    default_url: "missing.jpg"
-  has_attached_file :cover_pic,
-    default_url: "default_cover.jpg"
+  has_attached_file :prof_pic, default_url: "missing.jpg"
+  has_attached_file :cover_pic, default_url: "default_cover.jpg"
   validates_attachment_content_type :prof_pic, content_type: /\Aimage\/.*\Z/
+
   validates_presence_of :session_token, :password_digest, :email,
                         :first_name, :last_name, :dob, :alignment
   validates_uniqueness_of :session_token, :email
   validates :password, length: { minimum: 6 }, allow_nil: true
   validates :alignment, inclusion: { in: ['Hero', 'Villain']}
 
+  has_one :profile, dependent: :destroy
+
   attr_reader :password
 
   after_initialize :ensure_session_token
+  after_create :create_profile
 
   def password=(pw)
     @password = pw
@@ -57,6 +59,16 @@ class User < ApplicationRecord
     self.session_token = generate_session_token
     self.save!
     self.session_token
+  end
+
+  def create_profile
+    Profile.create(
+      user_id: self.id,
+      job: '',
+      workplace: '',
+      education: '',
+      location: '',
+      hometown: '' )
   end
 
   private
