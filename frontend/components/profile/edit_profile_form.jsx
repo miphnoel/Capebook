@@ -96,7 +96,7 @@ class EditProfileForm extends React.Component {
             />
           </div>
           <div className="edit-field">
-            <label htmlFor="location" className="edit-label">
+            <label className="edit-label">
               <i className="fa fa-home" aria-hidden="true"></i>
               <h3>Current City</h3>
             </label>
@@ -122,7 +122,7 @@ class EditProfileForm extends React.Component {
             />
           </div>
           <div className="button-box">
-            <button onClick={this.handleSubmit}>
+            <button className="save-button" onClick={this.handleSubmit}>
               Save
             </button>
           </div>

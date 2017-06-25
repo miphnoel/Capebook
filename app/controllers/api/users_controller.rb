@@ -21,8 +21,10 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    if @user.update(user_params)
-      render :show, status: :ok, location: @user
+    if current_user.id != @user.id
+      render json: "You villain! Those pictures aren't yours!"
+    elsif @user.update(picture_params)
+      render :show
     else
       render json: @user.errors, status: :unprocessable_entity
     end
@@ -34,13 +36,18 @@ class Api::UsersController < ApplicationController
   end
 
   private
+
     def set_user
       @user = User.find(params[:id])
     end
 
     def user_params
       params.require(:user).permit(
-        :email, :password, :first_name, :last_name, :dob, :alignment
+        :email, :password, :first_name, :last_name, :dob, :alignment,
       )
+    end
+
+    def picture_params
+      params.require(:user).permit(:prof_pic, :cover_pic)
     end
 end

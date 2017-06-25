@@ -24,8 +24,8 @@ export const fetchFriends = () => (dispatch) => {
     .then(users => dispatch(receiveFriends(users)));
 }
 
-export const updateUser = (user) => (dispatch) => {
-  return APIUtil.updateUser()
+export const updateUser = (id, formData) => (dispatch) => {
+  return APIUtil.updateUser(id, formData)
     .then(user => dispatch(receiveUser(user)));
 }
 
