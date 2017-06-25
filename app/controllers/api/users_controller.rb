@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
+  before_action :require_proper_user, only: [:update, :destroy]
 
   def index
     @users = User.all
@@ -21,9 +22,7 @@ class Api::UsersController < ApplicationController
   end
 
   def update
-    if current_user.id != @user.id
-      render json: "You villain! Those pictures aren't yours!"
-    elsif @user.update(picture_params)
+    if @user.update(picture_params)
       render :show
     else
       render json: @user.errors, status: :unprocessable_entity
@@ -31,6 +30,7 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
+
     @user.destroy
     head :no_content
   end
@@ -39,6 +39,12 @@ class Api::UsersController < ApplicationController
 
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def require_proper_user
+      if current_user.id != @user.id
+        render json: "You villain! Hands off profiles that aren't yours!"
+      end
     end
 
     def user_params

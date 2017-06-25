@@ -106,7 +106,7 @@
   }
 }
 
-.edit-profile {
+.profile-header-button {
   background: $lighter-back-grey;
   border: 1px solid #ced0d4;
   border-radius: 2px;
@@ -119,7 +119,7 @@
     background: $light-grey;
   }
 
-  button {
+  & > button {
     color: $dark-grey;
     position: relative;
     font-size: 12px;
@@ -127,6 +127,7 @@
     padding: 6px 10px 6px 0;
     width: 100%;
     text-align: center;
+    vertical-align: middle;
 
     i {
       margin-right: 10px;

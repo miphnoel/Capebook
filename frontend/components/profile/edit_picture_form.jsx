@@ -10,7 +10,9 @@ class EditPictureForm extends React.Component {
 
     this.state = {
       prof_pic: null,
-      cover_pic: null
+      cover_pic: null,
+      prof_url: '',
+      cover_url: ''
     };
 
     this.uploadProfPic = this.uploadProfPic.bind(this);
@@ -26,14 +28,20 @@ class EditPictureForm extends React.Component {
   uploadProfPic(e) {
     const file = e.currentTarget.files[0];
     const reader = new FileReader();
-    reader.onloadend = () => this.setState({prof_pic: file});
+    reader.onloadend = () => this.setState({
+      prof_pic: file,
+      prof_url: reader.result
+    });
     if (file) reader.readAsDataURL(file);
   }
 
   uploadCoverPic(e) {
     const file = e.currentTarget.files[0];
     const reader = new FileReader();
-    reader.onloadend = () => this.setState({cover_pic: file});
+    reader.onloadend = () => this.setState({
+      cover_pic: file,
+      cover_url: reader.result
+    });
     if (file) reader.readAsDataURL(file);
   }
 
@@ -51,31 +59,47 @@ class EditPictureForm extends React.Component {
   }
 
   render() {
+    const { cover_url, prof_url } = this.state;
+    const { cover_pic, prof_pic } = this.props.user;
+
     return (
       <div
         className='modal-frame picture-modal'
         onClick={(e) => this.closeOneFrame(e, 'editPic')}>
         <div
           className='edit-picture-form'
-          onClick={(e) => e.stopPropagation()}>
-          <div className="upload-prof-pic">
-            <label className="upload-pic-label">Update Profile Picture
-              <input
-                type="file"
-                onChange={this.uploadProfPic}
-              />
-            </label>
+          onClick={(e) => e.stopPropagation()}
+          >
+          <div className="cover-preview-box">
+            <h3>Cover Photo</h3>
+            <div className="cover-pic-preview">
+              <img src={cover_url ? cover_url : cover_pic} />
+            </div>
           </div>
-          <div className="upload-cover-pic">
-            <label className="upload-pic-label">Update Cover Photo
-              <input
-                type="file"
-                onChange={this.uploadCoverPic}
-              />
-            </label>
-          </div>
-          <div className="edit-picture-button">
-            <button className="save-button" onClick={this.handleSubmit}>Save</button>
+          <div className="edit-pic-form-bottom">
+            <div className="prof-preview-box">
+              <h3>Profile</h3>
+              <div className="prof-pic-preview">
+                <img src={prof_url ? prof_url : prof_pic} />
+              </div>
+            </div>
+            <div className="upload-buttons">
+              <label className="upload-pic-label">Update Profile Picture
+                <input
+                  type="file"
+                  hidden
+                  onChange={this.uploadProfPic}
+                  />
+              </label>
+              <label className="upload-pic-label">Update Cover Photo
+                <input
+                  type="file"
+                  hidden
+                  onChange={this.uploadCoverPic}
+                  />
+              </label>
+              <button className="save-button" onClick={this.handleSubmit}>Save</button>
+            </div>
           </div>
         </div>
       </div>

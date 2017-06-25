@@ -1,5 +1,6 @@
 class Api::ProfilesController < ApplicationController
   before_action :set_profile
+  before_action :require_proper_user, only: [:update]
 
   def show
 
@@ -18,6 +19,12 @@ class Api::ProfilesController < ApplicationController
   def set_profile
     @user = User.find(params[:user_id])
     @profile = @user.profile
+  end
+
+  def require_proper_user
+    if current_user.id != @user.id
+      render json: "Keep your villainous hands away from others' details!"
+    end
   end
 
   def profile_params

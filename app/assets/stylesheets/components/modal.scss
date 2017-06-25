@@ -11,9 +11,12 @@
   display: flex;
 }
 
+
 .save-button {
-  background: $content-lblue;
+  background: linear-gradient($header-lblue, $header-dblue);
+  box-shadow: inset 0 1px 1px #a4e388;
   border: 1px solid $content-lblue;
+  border-color: $content-lblue;
   border-radius: 2px;
   padding: 2px 8px;
   color: white;
@@ -138,10 +141,122 @@
   z-index: 3;
 }
 
+
 .edit-picture-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 6px;
   background: white;
   border-radius: 3px;
-  width: 775px;
-  height: 600px;
   margin: auto;
+
+  .edit-pic-form-bottom {
+    width: 650px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & > div {
+      border: 1px solid $border-grey;
+      border-radius: 2px;
+    }
+  }
+
+  .upload-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    background: $light-grey;
+    padding: 10px;
+    margin: 10px;
+
+    label, button {
+      border-radius: 5px;
+      background: linear-gradient($content-lblue, $header-lblue);
+      background-color: $content-lblue;
+      box-shadow: inset 0 1px 1px #a4e388;
+      border: 1px solid $content-lblue;
+      border-color: $content-lblue;
+      text-shadow: 0 1px 2px rgba(0,0,0,.5);
+      margin: 0 8px;
+      box-sizing: content-box;
+      text-align: center;
+      padding: 12px;
+      white-space: nowrap;
+
+      &:hover {
+        background: $content-blue;
+        border-color: $content-blue;
+        transition: .2s background-color;
+      }
+
+    }
+
+    button {
+      padding: 9px;
+    }
+  }
+
+  div.prof-preview-box {
+    padding: 0 10px 10px;
+    margin: 0 10px 10px;
+    background: $light-grey;
+    position: relative;
+    bottom: 1px;
+    border-top: none;
+    border-radius: 0 0 2px 2px;
+    z-index: 4;
+
+    h3 {
+      color: white;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      bottom: 15px;
+      right: 20px;
+      font-size: 14px;
+      margin: 0;
+      font-weight: normal;
+    }
+  }
+
+  .prof-pic-preview {
+    border: 4px solid white;
+    border-radius: 2px;
+    height: 160px;
+    width: 160px;
+  }
+
+  .cover-preview-box {
+    padding: 10px;
+    margin: 10px 10px 0;
+    background: $light-grey;
+    border: 1px solid $border-grey;
+    border-radius: 2px;
+    position: relative;
+
+    h3 {
+      color: white;
+      text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+      position: absolute;
+      bottom: 25px;
+      right: 30px;
+      margin: 0;
+      font-size: 18px;
+      font-weight: normal;
+    }
+  }
+  .cover-pic-preview {
+    height: 280px;
+    width: 650px;
+    margin: 10px;
+    border: 4px solid white;
+    border-radius: 2px;
+  }
+
 }
