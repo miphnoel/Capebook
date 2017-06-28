@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import EditProfileForm from './edit_profile_form';
+import ApproveDenyModal from './approve_deny_modal';
 
 class ProfileHeader extends React.Component {
   constructor(props) {
@@ -13,9 +14,24 @@ class ProfileHeader extends React.Component {
   }
 
   componentDidMount() {
-    const id = this.props.user.friendship.id;
-    if (id > 0 && id != this.props.friendship.id) {
+    const { status, id } = this.props.user.friendship;
+    if (status > 0 && id != this.props.friendship.id) {
       this.props.fetchFriendship(id);
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    const newStatus = nextProps.friendship.status;
+    if (newStatus === this.props.friendship.status) {
+      return;
+    } else if (newStatus === "approved") {
+      this.setState({ status: 3 });
+    } else if (newStatus === "denied") {
+      if (this.props.user.id === nextProps.friendship.sender_id) {
+        this.setState({ status: 5 });
+      } else {
+        this.setState({ status: 4})
+      }
     }
   }
 
@@ -31,22 +47,12 @@ class ProfileHeader extends React.Component {
         this.props.requestFriendship(user.id);
         this.setState({ status: 1 });
         break;
-      case 2:
-        if (e.currentTarget.id === "approve-button") {
-          this.props.respondToRequest(friendshipId, {status: 1});
-          this.setState({ status: 3 });
-        } else {
-          respondToRequest(friendshipId, {status: 2})
-          this.setState({ status: 5 });
-        }
-        break;
       case 1:
       case 3:
       case 5:
         this.props.unfriend(this.props.friendship.id);
         this.setState({ status: 0 });
     }
-
   }
 
   render() {
@@ -72,7 +78,7 @@ class ProfileHeader extends React.Component {
       case 1:
         button = (
           <button className="cancel-request" onClick={this.handleClick}>
-            <i className="fa fa-user-plus fa-lg" aria-hidden="true"></i>
+            <i className="fa fa-user-times fa-lg" aria-hidden="true"></i>
             <span>Cancel Request</span>
           </button>
         )
@@ -81,33 +87,24 @@ class ProfileHeader extends React.Component {
         button = (
           <button
             className="response-button"
-            onMouseOver={() => this.props.openModal('approveDeny')}>
+            onMouseOver={() => this.props.openModal('approveDeny')}
+            onMouseLeave={() => this.props.closeModal('approveDeny')}>
             <i className="fa fa-user-plus fa-lg" aria-hidden="true"></i>
             <span>Respond to Friend Request</span>
-            // {approveDenyVisible ? approveDeny : <div></div>}
+            {approveDenyVisible ? <ApproveDenyModal /> : <div></div>}
           </button>
-          // <div className="response-buttons">
-          //   <button id="approve-button" onClick={this.handleClick}>
-          //     <i className="fa fa-user-plus fa-lg" aria-hidden="true"></i>
-          //     <span>Approve Request</span>
-          //   </button>
-          //   <button id="deny-button" onClick={this.handleClick}>
-          //     <i className="fa fa-user-plus fa-lg" aria-hidden="true"></i>
-          //     <span>Deny Request</span>
-          //   </button>
-          // </div>
         )
         break;
       case 3:
         button = (
           <button className="unfriend-button" onClick={this.handleClick}>
-            <i className="fa fa-user-plus fa-lg" aria-hidden="true"></i>
+            <i className="fa fa-user-times fa-lg" aria-hidden="true"></i>
             <span>Unfriend</span>
           </button>
         )
         break;
       case 4:
-        <button hidden>Blocked!</button>
+        button = <button disabled>You've been blocked!</button>
         break;
       case 5:
         button = (

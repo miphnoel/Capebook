@@ -78,7 +78,7 @@ class Api::UsersController < ApplicationController
       when "approved"
         return 3
       when "denied"
-        return 4 if @user.id == @current_friendship.sender_id
+        return 4 if @user.id == @current_friendship.receiver_id
         return 5
       end
     end

@@ -14,8 +14,9 @@ const FriendshipsReducer = (state = defaultState, action) => {
     case RECEIVE_FRIENDSHIP:
       return merge({}, state, { friendship: action.friendship})
     case REMOVE_FRIENDSHIP:
-      const newState = merge({}, state);
-      delete newState.friendRequests[action.id]
+      const newState = merge({}, state)
+      newState.friendship = {};
+      delete newState.friendRequests[action.friendshipId]
       return newState;
     default:
       return state;

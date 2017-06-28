@@ -32,7 +32,7 @@ class Api::FriendshipsController < ApplicationController
     @friendship = Friendship.find(params[:id])
 
     if @friendship.receiver_id == current_user.id && @friendship.update(friendship_params)
-      render 'api/friendships/friendship'
+      render :show
     else
       render json: @friendship.errors.full_messages, status: 422
     end

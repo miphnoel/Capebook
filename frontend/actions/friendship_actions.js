@@ -36,7 +36,7 @@ export const createFriendRequest = (receiverId) => (dispatch) => {
 
 export const updateFriendRequest = (senderId, friendship) => (dispatch) => {
   return ApiUtil.updateFriendRequest(senderId, friendship)
-  .then(friendship => dispatch(reciveFriendship(friendship)));
+  .then(friendship => dispatch(receiveFriendship(friendship)));
 }
 
 export const unfriend = (id) => (dispatch) => {

@@ -135,8 +135,37 @@
   }
 }
 
-.approve-deny {
+.response-button {
+  position: relative;
+}
+
+.dropdown-frame {
   background: transparent;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+}
+
+.approve-deny-dropdown {
+  padding: 12px 0;
+  background: white;
+  border: 1px solid $border-grey;
+  position: absolute;
+  top: 13px;
+  left: 17px;
+  box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+
+  li {
+    padding: 6px 18px;
+
+    &:hover {
+      color: white;
+      background: $content-blue;
+      border-top: 1px solid $header-dblue;
+      border-bottom: 1px solid $header-dblue;
+    }
+  }
 }
 
 .profile-bottom {

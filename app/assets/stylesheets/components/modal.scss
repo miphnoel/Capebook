@@ -11,6 +11,11 @@
   display: flex;
 }
 
+.transparent-frame {
+  background: transparent;
+}
+
+
 
 .save-button {
   background: linear-gradient($content-lblue, $header-lblue);
