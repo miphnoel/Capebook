@@ -5,11 +5,12 @@ import { fetchFriends } from '../../actions/user_actions';
 import Friends from './friends';
 
 const mapStateToProps = (state) => ({
-  friends: values(state.users.users)
+  friends: values(state.users.friends),
+  userId: state.users.user.id,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchFriends: () => dispatch(fetchFriends())
+  fetchFriends: (id) => dispatch(fetchFriends(id)),
 });
 
 export default connect(

@@ -110,10 +110,10 @@
   background: $lighter-back-grey;
   border: 1px solid #ced0d4;
   border-radius: 2px;
-  width: 105px;
   position: absolute;
   bottom: 50px;
   right: 16px;
+  padding: 6px 8px;
 
   &:hover {
     background: $light-grey;
@@ -124,7 +124,6 @@
     position: relative;
     font-size: 12px;
     font-weight: bold;
-    padding: 6px 10px 6px 0;
     width: 100%;
     text-align: center;
     vertical-align: middle;
@@ -134,6 +133,10 @@
       height: 16px;
     }
   }
+}
+
+.approve-deny {
+  background: transparent;
 }
 
 .profile-bottom {

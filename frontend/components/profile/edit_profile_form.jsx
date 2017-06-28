@@ -136,7 +136,7 @@ class EditProfileForm extends React.Component {
 }
 
 const mapStateToProps = ({ users, modal }) => ({
-  user: users.showUser,
+  user: users.user,
   editPicVisible: modal.editPic,
 });
 

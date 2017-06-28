@@ -2,20 +2,24 @@
 #
 # Table name: users
 #
-#  id                    :integer          not null, primary key
-#  password_digest       :string           not null
-#  session_token         :string           not null
-#  email                 :string           not null
-#  first_name            :string           not null
-#  last_name             :string           not null
-#  dob                   :date             not null
-#  alignment             :string           not null
-#  created_at            :datetime         not null
-#  updated_at            :datetime         not null
-#  prof_pic_file_name    :string
-#  prof_pic_content_type :string
-#  prof_pic_file_size    :integer
-#  prof_pic_updated_at   :datetime
+#  id                     :integer          not null, primary key
+#  password_digest        :string           not null
+#  session_token          :string           not null
+#  email                  :string           not null
+#  first_name             :string           not null
+#  last_name              :string           not null
+#  dob                    :date             not null
+#  alignment              :string           not null
+#  created_at             :datetime         not null
+#  updated_at             :datetime         not null
+#  prof_pic_file_name     :string
+#  prof_pic_content_type  :string
+#  prof_pic_file_size     :integer
+#  prof_pic_updated_at    :datetime
+#  cover_pic_file_name    :string
+#  cover_pic_content_type :string
+#  cover_pic_file_size    :integer
+#  cover_pic_updated_at   :datetime
 #
 
 class User < ApplicationRecord
@@ -30,6 +34,20 @@ class User < ApplicationRecord
   validates :alignment, inclusion: { in: ['Hero', 'Villain']}
 
   has_one :profile, dependent: :destroy
+
+  has_many :sent_requests,
+    class_name: :Friendship,
+    foreign_key: :sender_id,
+    dependent: :destroy
+
+  has_many :received_requests,
+    class_name: :Friendship,
+    foreign_key: :receiver_id,
+    dependent: :destroy
+
+  has_many :requested_friends, through: :sent_requests, source: :receiver
+  has_many :received_friends, through: :received_requests, source: :sender
+
 
   attr_reader :password
 
@@ -59,6 +77,38 @@ class User < ApplicationRecord
     self.session_token = generate_session_token
     self.save!
     self.session_token
+  end
+
+  def friendships
+    Friendship.where("sender_id = #{id} OR receiver_id = #{id}")
+  end
+
+  def pending_friendships
+    friendships.where(status: "pending")
+  end
+
+  def blocked_friendships
+    friendships.where(status: "blocked")
+  end
+
+  def friend_ids
+    # friendships.select(
+    # "CASE WHEN sender_id = #{id} THEN receiver_id
+    # ELSE sender_id
+    # END").where(status: "approved")
+
+    friendships.where(status: "approved").
+    pluck(:sender_id, :receiver_id).flatten.reject {|id| id == self.id}
+  end
+
+  def friends
+    # User.joins("INNER JOIN friendships ON friendships.sender_id = users.id")
+    #     .joins("INNER JOIN users AS friends ON friendships.receiver_id = friends.id")
+    #     .where("users.id = #{id} OR friends.id = #{id} AND friendships.status = 1")
+        # .select("CASE WHEN users.id = #{id} THEN friends.*
+        #          ELSE users.* END")
+
+      User.where(id: friend_ids)
   end
 
   def create_profile

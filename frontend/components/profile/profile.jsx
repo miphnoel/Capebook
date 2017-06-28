@@ -56,7 +56,7 @@ const mapStateToProps = (state, ownProps) => {
   return ({
   currentUser: state.session.currentUser,
   userId: ownProps.match.params.userId,
-  user: state.users.showUser
+  user: state.users.user
 })};
 
 const mapDispatchToProps = (dispatch) => ({

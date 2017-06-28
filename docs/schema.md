@@ -24,8 +24,8 @@ job             | string    |
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
-requester_id| integer   | not null, foreign key (references users), indexed
-requestee_id| integer   | not null, foreign key (references users), indexed
+sender_id| integer   | not null, foreign key (references users), indexed
+receiver_id| integer   | not null, foreign key (references users), indexed
 status      | string    | not null, default: 'pending'
 
 ## posts

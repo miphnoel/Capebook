@@ -9,7 +9,7 @@ class Friends extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchFriends()
+    this.props.fetchFriends(this.props.userId)
       .then( () => this.setState({loading: false}));
   }
 

@@ -67,7 +67,7 @@ const Intro = ({ user }) => {
 }
 
 const mapStateToProps = ({ users }) => ({
-  user: users.showUser,
+  user: users.user,
 });
 
 export default connect(

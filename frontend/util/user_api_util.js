@@ -5,10 +5,10 @@ export const fetchUser = (id) => {
   });
 }
 
-export const fetchFriends = () => {
+export const fetchFriends = (id) => {
   return $.ajax({
     method: 'GET',
-    url: '/api/users/'
+    url: `/api/users/${id}/friends`,
   });
 }
 
@@ -28,4 +28,11 @@ export const updateProfile = (id, profile) => {
     url: `/api/users/${id}/profile`,
     data: { profile }
   });
+}
+
+export const fetchAllUsers = () => {
+  return $.ajax({
+    method: 'GET',
+    url: 'api/users'
+  })
 }

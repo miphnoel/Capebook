@@ -108,7 +108,7 @@ class EditPictureForm extends React.Component {
 }
 
 const mapStateToProps = ({ users }) => ({
-  user: users.showUser,
+  user: users.user,
 });
 
 const mapDispatchToProps = (dispatch) => ({

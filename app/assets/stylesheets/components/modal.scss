@@ -13,7 +13,8 @@
 
 
 .save-button {
-  background: linear-gradient($header-lblue, $header-dblue);
+  background: linear-gradient($content-lblue, $header-lblue);
+  background-color: $content-lblue;
   box-shadow: inset 0 1px 1px #a4e388;
   border: 1px solid $content-lblue;
   border-color: $content-lblue;
@@ -32,7 +33,6 @@
     padding: 3px 9px;
     box-shadow: 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
     transition: 200ms background-color, 200ms box-shadow;
-    box-sizing: content-box;
   }
 }
 
@@ -193,7 +193,8 @@
       &:hover {
         background: $content-blue;
         border-color: $content-blue;
-        transition: .2s background-color;
+        box-shadow: 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
+        transition: .2s background-color, .2s box-shadow;
       }
 
     }

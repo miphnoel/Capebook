@@ -1,16 +1,13 @@
 # == Schema Information
 #
-# Table name: profiles
+# Table name: friendships
 #
-#  id         :integer          not null, primary key
-#  user_id    :integer          not null
-#  job        :string
-#  workplace  :string
-#  education  :string
-#  location   :string
-#  hometown   :string
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id           :integer          not null, primary key
+#  sender_id :integer          not null
+#  receiver_id :integer          not null
+#  status       :string           default("pending"), not null
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

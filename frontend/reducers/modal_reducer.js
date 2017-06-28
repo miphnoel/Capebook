@@ -4,6 +4,10 @@ import merge from 'lodash/merge';
 const defaultState = {
   editProfile: false,
   editPic: false,
+  friendRequests: false,
+  messages: false,
+  notifications: false,
+  approveDeny: false,
 };
 
 const ModalReducer = (state = defaultState, action) => {
