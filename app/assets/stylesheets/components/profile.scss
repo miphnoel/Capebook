@@ -148,22 +148,26 @@
 }
 
 .approve-deny-dropdown {
-  padding: 12px 0;
+  padding: 8px 0 12px;
   background: white;
   border: 1px solid $border-grey;
   position: absolute;
   top: 13px;
   left: 17px;
   box-shadow: -1px 1px 2px rgba(0, 0, 0, 0.5);
+  font-weight: normal;
+  font-size: 12px;
+  text-align: left;
 
   li {
-    padding: 6px 18px;
+    padding: 4px 18px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
 
     &:hover {
       color: white;
-      background: $content-blue;
-      border-top: 1px solid $header-dblue;
-      border-bottom: 1px solid $header-dblue;
+      background: $content-lblue;
+      border-color: $content-blue;
     }
   }
 }

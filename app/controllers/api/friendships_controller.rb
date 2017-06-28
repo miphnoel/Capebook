@@ -2,8 +2,7 @@ class Api::FriendshipsController < ApplicationController
 
   def index
     @user = User.find(params[:user_id])
-    @users = User.friends
-    render 'api/users/index'
+    @requests = @user.pending_friendships.includes(:sender)
   end
 
   def show

@@ -20,7 +20,7 @@ export const removeFriendship = (friendshipId) => ({
 });
 
 export const fetchFriendRequests = () => (dispatch) => {
-  return ApiUtil.fetchFriends()
+  return ApiUtil.fetchFriendRequests()
     .then(friendRequests => dispatch(receiveFriendRequests(friendRequests)));
 }
 
