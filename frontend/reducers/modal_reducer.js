@@ -18,7 +18,7 @@ const ModalReducer = (state = defaultState, action) => {
     case CLOSE_MODAL:
       return merge({}, state, { [action.modal]: false });
     default:
-      return defaultState;
+      return state;
   }
 }
 

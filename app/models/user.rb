@@ -48,6 +48,9 @@ class User < ApplicationRecord
   has_many :requested_friends, through: :sent_requests, source: :receiver
   has_many :received_friends, through: :received_requests, source: :sender
 
+  has_many :authored_posts, foreign_key: :author_id, class_name: :Post
+  has_many :received_posts, foreign_key: :receipient_id, class_name: :Post
+  has_many :comments, foreign_key: :author_id
 
   attr_reader :password
 
@@ -79,12 +82,20 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def full_name
+    "#{self.first_name} #{self.last_name}"
+  end
+
   def friendships
     Friendship.where("sender_id = #{id} OR receiver_id = #{id}")
   end
 
+  def posts
+    Post.where("author_id = #{id} OR recipient_id = #{id}")
+  end
+
   def pending_friendships
-    friendships.where(status: "pending")
+    friendships.where(status: "pending", receiver_id: self.id)
   end
 
   def blocked_friendships

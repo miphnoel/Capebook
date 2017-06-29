@@ -21,13 +21,13 @@ class Friends extends React.Component {
     let friends;
 
     if (this.state.loading) {
-      friends = <div className="loader">Retrieving Intel...</div>;
+      friends = <div className="loader">''...</div>;
     } else {
       friends = this.props.friends.map(friend => (
         <li key={friend.id}>
           <Link to={`/profile/${friend.id}`}>
             <div className="friend-pic">
-              <img src={friend.pic} alt={friend.first_name + "_pic"}/>
+              <img src={friend.prof_pic} alt={friend.first_name + "_pic"}/>
               <div className="text-shadow">
                 <span>{friend.first_name + ' ' + friend.last_name}</span>
               </div>

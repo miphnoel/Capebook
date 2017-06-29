@@ -3,6 +3,7 @@ import { withRouter, Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
 import SearchContainer from './search_container';
+import FriendRequests from './friend_requests';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -24,17 +25,17 @@ class NavBar extends React.Component {
           <div className="right-nav">
             <div className="nav-links">
               <div className="profile-link">
-                <Link to={`/profile/${currentUser.id}`}>
-                  <i className="fa fa-user-o fa-lg" aria-hidden="true"></i>
+                <Link to={`/profile/${currentUser.id}`} id="profile-a" className="nav-a">
+                  <img src={currentUser.prof_pic} />
                   <span>{currentUser.first_name}</span>
                 </Link>
               </div>
               <div className="home-link">
-                <Link to='/'>Home</Link>
+                <Link to='/' className="nav-a">Home</Link>
               </div>
             </div>
             <div className="drop-downs">
-              <i className="fa fa-users fa-lg" aria-hidden="true"></i>
+              <FriendRequests />
               <i className="fa fa-comments fa-lgx" aria-hidden="true"></i>
               <i className="fa fa-globe fa-lg" aria-hidden="true"></i>
             </div>

@@ -7,37 +7,53 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  z-index: 2;
+  z-index: 4;
   display: flex;
 }
 
 .transparent-frame {
   background: transparent;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 }
 
 
 
 .save-button {
-  background: linear-gradient($content-lblue, $header-lblue);
-  background-color: $content-lblue;
-  box-shadow: inset 0 1px 1px #a4e388;
+  background: $content-lblue;
   border: 1px solid $content-lblue;
-  border-color: $content-lblue;
   border-radius: 2px;
   padding: 2px 8px;
   color: white;
   width: 30px;
   letter-spacing: normal;
   margin: 5px auto;
-  box-sizing: content-box;
 
 
   &:hover {
     background: $content-blue;
-    border: $content-blue;
-    padding: 3px 9px;
-    box-shadow: 0 1px 2px rgba(88, 144, 255, .75), 0 1px 1px rgba(0, 0, 0, .15);
-    transition: 200ms background-color, 200ms box-shadow;
+    border-color: $content-blue;
+    transition: 200ms background-color;
+  }
+}
+
+.delete-button {
+  background: $lighter-back-grey;
+  border: 1px solid $border-grey;
+  border-radius: 2px;
+  padding: 6px 8px;
+  color: $dark-grey;
+  letter-spacing: normal;
+  margin: 5px auto;
+
+  &:hover {
+    background: $light-grey;
   }
 }
 

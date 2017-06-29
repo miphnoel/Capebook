@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     end
     resource :session, only: [:create, :destroy]
     resources :friendships, only: [:index, :show, :destroy]
+    resources :posts, only: [:create, :update, :destroy]
+    resources :comments, only: [:create, :update, :destroy]
     get 'users/:id/friends', to: 'users#friends', as: 'friends'
+    get 'timeline/:id', to: 'posts#timeline', as: 'timeline'
   end
 end

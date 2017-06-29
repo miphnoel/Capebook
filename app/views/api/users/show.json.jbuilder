@@ -9,3 +9,6 @@ end
 json.profile do
   json.partial! 'api/profile/profile', profile: @user.profile
 end
+json.posts do
+  json.partial! 'api/posts/post', collection: @posts, as: :post
+end

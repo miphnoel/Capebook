@@ -5,8 +5,9 @@ import { openModal } from '../../actions/modal_actions';
 import NavBar from './nav_bar';
 import FriendRequests from './friend_requests';
 
-const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser
+const mapStateToProps = ({ session, modal }) => ({
+  currentUser: session.currentUser,
+  friendRequestsVisible: modal.friendRequests,
 });
 
 const mapDispatchToProps = (dispatch) => ({

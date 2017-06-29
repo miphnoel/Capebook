@@ -36,7 +36,7 @@ class Profile extends React.Component {
     let comp;
 
     if (this.state.loading) {
-      comp = <div className="loader">Retrieving Intel...</div>
+      comp = <div className="loader">''</div>
     } else {
       comp = <ProfileContent user={user} />
     }

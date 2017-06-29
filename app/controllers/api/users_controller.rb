@@ -1,5 +1,5 @@
 class Api::UsersController < ApplicationController
-  before_action :set_user, only: [:friends, :show, :update, :destroy]
+  before_action :set_user, only: [:posts, :friends, :show, :update, :destroy]
   before_action :require_proper_user, only: [:update, :destroy]
 
   def index
@@ -16,6 +16,7 @@ class Api::UsersController < ApplicationController
       "sender_id = #{current_user.id} OR receiver_id = #{current_user.id}")
       .first
     @status = status
+    @posts = @user.posts.includes(:comments)
   end
 
   def create

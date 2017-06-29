@@ -1,7 +1,7 @@
 class Api::FriendshipsController < ApplicationController
 
   def index
-    @user = User.find(params[:user_id])
+    @user = current_user
     @requests = @user.pending_friendships.includes(:sender)
   end
 

@@ -15,7 +15,7 @@ class ApproveDenyModal extends React.Component {
     const { user, friendship, updateFriendRequest } = this.props;
     return e => {
       e.preventDefault;
-      updateFriendRequest(user.id, { id: friendship.id, status: status })
+      updateFriendRequest({ id: friendship.id, sender_id: user.id, status: status })
         .then(() => this.props.closeModal('approveDeny'));
     }
   }

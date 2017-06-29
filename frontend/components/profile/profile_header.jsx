@@ -21,13 +21,14 @@ class ProfileHeader extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    const newStatus = nextProps.friendship.status;
-    if (newStatus === this.props.friendship.status) {
+    const { status, sender_id } = nextProps.friendship;
+    if (status === this.props.friendship.status ||
+        sender_id !== this.props.user.id) {
       return;
-    } else if (newStatus === "approved") {
+    } else if (status === "approved") {
       this.setState({ status: 3 });
-    } else if (newStatus === "denied") {
-      if (this.props.user.id === nextProps.friendship.sender_id) {
+    } else if (status === "denied") {
+      if (this.props.user.id === sender_id) {
         this.setState({ status: 5 });
       } else {
         this.setState({ status: 4})
@@ -141,7 +142,7 @@ class ProfileHeader extends React.Component {
             </ul>
           </div>
         </div>
-        <div className="profile-header-button">
+        <div className="grey-button">
           {button}
         </div>
         <div className="profile-picture-box">

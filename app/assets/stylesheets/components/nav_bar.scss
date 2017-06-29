@@ -58,34 +58,132 @@
     display: flex;
     align-items: center;
 
-    a {
+    .nav-a {
       padding: 8px 10px;
       border-radius: 2px;
+      display: flex;
 
-      i {
+      &#profile-a {
+        padding: 3px 8px 3px 3px;
+      }
+
+      img {
         border-radius: 2px;
-        margin: 2px 6px 2px -8px;
+        height: 24px;
+        width: 24px;
+        margin-right: 8px;
       }
 
       span {
         margin: auto;
       }
     }
-
-
   }
 }
 
 .drop-downs {
   padding: 0 10px;
   margin: 0 10px;
+  position: relative;
 
   i {
-    margin: 5px 7px;
-    padding: 0 3px 3px 0;
+    padding: 5px 10px 8px 5px;
     font-size: 21px;
     color: #152135;
+    z-index: 5;
+    cursor: pointer;
+
+    &:hover {
+      color: black;
+    }
   }
+
+  .white {
+    color: white;
+
+    &:hover {
+      color: white;
+    }
+  }
+
+  .drop-down {
+    position: absolute;
+    width: 430px;
+    top: 39px;
+    right: 0;
+    padding: 5px 0;
+    background: white;
+    border: 1px solid $border-grey;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    font-family: "San Francisco", -apple-system, BlinkMacSystemFont, '.SFNSTet-Regular', sans-serif;
+    font-weight: bold;
+
+    .drop-down-header {
+      font-size: 12px;
+      padding: 6px 12px;
+      color: $text-black;
+    }
+
+    ul.request-list {
+      position: relative;
+      border-top: 1px solid $border-grey;
+      padding: 5px 0;
+      font-size: 12px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      li {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        border-bottom: 1px solid $border-grey;
+        width: 100%;
+        padding: 6px 12px;
+        box-sizing: border-box;
+
+        a {
+          color: $content-blue;
+          font: inherit;
+
+          &:hover {
+            background: white;
+            text-decoration: underline;
+          }
+        }
+
+        img {
+          height: 48px;
+          width: 48px;
+          margin-right: 8px;
+        }
+
+        button {
+          height: auto;
+          vertical-align: middle;
+          width: auto;
+          padding: 6px 8px;
+          z-index: 5;
+        }
+
+        button:last-child {
+          margin-left: 4px;
+
+          &:hover {
+            background: $light-grey;
+          }
+        }
+      }
+    }
+  }
+}
+
+.no-requests {
+  color: $text-black;
 }
 
 .log-out button {
