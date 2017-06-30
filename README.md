@@ -10,6 +10,7 @@ Capebook is a Facebook-inspired social networking application for superheroes (a
 
 ![Synchronous client-side field validation](/app/assets/gifs/sign-in.gif)
 
+
 ### User Profiles
 
 Upon account creation, Capebook automatically generates a `profile` for the new user, populating default information such as a `profile picture` and `cover photo` (attached to the `user` with the `paperclip` gem and accessed through an Amazon Web Services bucket). Users can then edit their profile information and upload new photos through a nested modal form utilizing the flexibility of a `ModalReducer` to track multiple modals' status in the Redux store.

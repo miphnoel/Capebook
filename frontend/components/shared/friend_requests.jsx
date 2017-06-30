@@ -37,7 +37,7 @@ class FriendRequests extends React.Component {
         <li key={request.id}>
           <div>
             <img src={request.thumb} />
-            <Link to={`api/users/${request.sender_id}`}>{request.sender_name}</Link>
+            <Link to={`/profile/${request.sender_id}`}>{request.sender_name}</Link>
           </div>
           <div>
             <button className="save-button" onClick={this.handleResponse(
