@@ -1,6 +1,7 @@
 import * as APIUtil from '../util/session_api_util';
 
 import { receiveSignupErrors, receiveLoginErrors, clearFormErrors } from './form_actions';
+import { receiveUser } from './user_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
@@ -40,6 +41,6 @@ export const logout = () => dispatch => {
   return APIUtil.logout()
     .then(() => dispatch(receiveCurrentUser(null)),
           err => dispatch(receiveErrors(err.responseJSON)))
-      .then(() => dispatch(clearFormErrors())
-    );
+      .then(() => dispatch(receiveUser(null)))
+      .then(() => dispatch(clearFormErrors()));
 };

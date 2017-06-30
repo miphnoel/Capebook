@@ -3,5 +3,5 @@ class Post < ApplicationRecord
 
   belongs_to :author, class_name: :User
   belongs_to :recipient, class_name: :User
-  has_many :comments
+  has_many :comments, foreign_key: :parent_id, dependent: :destroy
 end

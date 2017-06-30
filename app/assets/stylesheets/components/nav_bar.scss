@@ -8,6 +8,9 @@
   justify-content: space-between;
   align-content: center;
   align-items: center;
+  position: fixed;
+  width: 100%;
+  z-index: 4;
 
 	.nav-content {
     width: 1012px;
@@ -25,6 +28,10 @@
   display: flex;
   align-items: center;
   flex-grow: 2;
+
+  .square-logo {
+  font-size: 28px;
+  }
 }
 
 .right-nav {
@@ -182,7 +189,7 @@
   }
 }
 
-.no-requests {
+.no-items {
   color: $text-black;
 }
 

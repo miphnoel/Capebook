@@ -4,6 +4,8 @@ import { Redirect } from 'react-router';
 
 import SearchContainer from './search_container';
 import FriendRequests from './friend_requests';
+import Messages from './messages';
+import Notifications from './notifications';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -19,7 +21,9 @@ class NavBar extends React.Component {
       <nav className="nav-bar">
         <div className="nav-content">
           <div className="left-nav">
-            <Link to='/'><i className="fa fa-facebook-official fa-2x" aria-hidden="true"></i></Link>
+            <Link to='/'>
+              <i className="fa fa-facebook-official fa-2x square-logo" aria-hidden="true"></i>
+            </Link>
             <SearchContainer />
           </div>
           <div className="right-nav">
@@ -31,13 +35,18 @@ class NavBar extends React.Component {
                 </Link>
               </div>
               <div className="home-link">
-                <Link to='/' className="nav-a">Home</Link>
+                <Link
+                  to='/'
+                  className="nav-a"
+                  onClick={() => this.props.setNullUser()}>
+                  Home
+                </Link>
               </div>
             </div>
             <div className="drop-downs">
               <FriendRequests />
-              <i className="fa fa-comments fa-lgx" aria-hidden="true"></i>
-              <i className="fa fa-globe fa-lg" aria-hidden="true"></i>
+              <Messages />
+              <Notifications />
             </div>
             <div className="log-out">
               <button onClick={() => logout()}>Log out</button>

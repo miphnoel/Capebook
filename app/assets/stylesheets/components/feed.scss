@@ -1,0 +1,254 @@
+.feed {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  flex: 1;
+  margin-top: 20px;
+}
+
+.focus {
+  z-index: 5;
+  position: relative;
+
+  & * {
+    z-index: 5;
+  }
+
+  textarea {
+    font-size: 24px;
+  }
+}
+
+.post-form-box {
+  background: white;
+  border: 1px solid $border-grey;
+  border-radius: 3px;
+  position: relative;
+  margin-bottom: 15px;
+
+  .post-form-header {
+    background: $lighter-back-grey;
+    padding: 10px 12px;
+    font-weight: bold;
+
+    i {
+      margin-right: 10px;
+      color: $content-blue;
+    }
+  }
+
+  .post-form-content {
+    position: relative;
+    background: white;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    border-top: 1px solid $border-grey;
+    border-bottom: 1px solid $border-grey;
+
+    img {
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      height: 40px;
+      width: 40px;
+    }
+
+
+  }
+
+  .text-container {
+    padding: 18px 34px 13px 12px;
+    margin-left: 48px;
+    width: 100%;
+    min-height: 71px;
+
+
+    textarea {
+      padding: 0;
+      min-height: 0;
+    }
+  }
+
+  .post-form-footer {
+    padding: 8px;
+    display: flex;
+    justify-content: flex-end;
+    background: $lighter-back-grey;
+
+    button {
+      margin: 0;
+      padding: 4px 16px;
+    }
+  }
+}
+
+.post {
+  background: white;
+  border: 1px solid $border-grey;
+  margin-bottom: 10px;
+  font-size: 14px;
+
+  a {
+    color: $content-blue;
+    font-weight: bold;
+  }
+}
+
+.post-header {
+  display: flex;
+  margin: 12px;
+  position: relative;
+
+  img {
+    height: 40px;
+    width: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 8px;
+  }
+}
+
+.post-usernames {
+  color: $placeholder-grey;
+  display: flex;
+  align-items: center;
+
+}
+
+.post-content {
+  margin: 0 12px;
+}
+
+.post-comments {
+  background: $lighter-back-grey;
+  border-top: 1px solid $border-grey;
+  padding: 8px 12px;
+  margin-top: 12px;
+  font-size: 12px;
+
+  img {
+    height: 32px;
+    width: 32px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 8px;
+
+  li {
+    margin: 3px 0;
+    }
+  }
+}
+
+.comment-list {
+  li {
+    display: flex;
+    margin: 6px 0;
+    align-items: center;
+
+    a {
+      margin-right: 6px;
+    }
+  }
+}
+
+.comment-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form {
+  display: flex;
+
+  input {
+    margin: 0 0 0 8px;
+    padding: 7px 5px;
+    border: 1px solid $border-grey;
+    outline: none;
+  }
+}
+
+.time-string {
+  font-size: 12px;
+  color: $placeholder-grey;
+}
+
+.post-menu-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+
+  button {
+    color: $placeholder-grey;
+    padding: 3px;
+    margin-left: 4px;
+  }
+}
+
+.delete-post-box {
+  width: 445px;
+  color: $text-black;
+  border: 1px solid $border-grey;
+  border-radius: 2px;
+}
+
+.delete-post-header {
+  background: $lighter-back-grey;
+  border-bottom: 1px solid $border-grey;
+  padding: 12px;
+  font-weight: bold;
+}
+
+.delete-post-warning {
+  background: white;
+  padding: 12px;
+}
+
+.delete-post-footer {
+  background: $lighter-back-grey;
+  border-top: 1px solid $border-grey;
+  padding: 12px;
+  display: flex;
+  justify-content: space-between;
+
+  button {
+    padding: 4px 12px;
+    width: auto;
+    margin: 0;
+  }
+
+  div {
+    display: flex;
+
+    button {
+      margin-left: 4px;
+    }
+  }
+
+
+}
+
+.neutral-button {
+  background: $lighter-back-grey;
+  border: 1px solid #ced0d4;
+  border-radius: 2px;
+  color: $dark-grey;
+  position: relative;
+  font-size: 12px;
+  font-weight: bold;
+  width: auto;
+  vertical-align: middle;
+  align-self: flex-start;
+
+  &:hover {
+    background: $light-grey;
+  }
+}
+
+.edit-wrap {
+  width: 600px;
+}
+
+.edit-post-area {
+  font-size: 24px;
+}

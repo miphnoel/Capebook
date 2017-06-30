@@ -24,7 +24,7 @@ body {
   display: flex;
   width: 1012px;
 	height: 100vh;
-  margin: auto;
+  margin-top: 42px;
 }
 
 body, button, input, label, select, td, textarea {
@@ -109,6 +109,10 @@ input[type="search"] {
 	padding: 5px;
 }
 
+textarea {
+	font-size: 14px;
+}
+
 
 label {
   cursor: pointer;
@@ -116,4 +120,22 @@ label {
 
 .errors {
 	color: red;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    $placeholder-grey;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    $placeholder-grey;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    $placeholder-grey;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:    $placeholder-grey;
+}
+::-ms-input-placeholder { /* Microsoft Edge */
+   color:    $placeholder-grey;
 }

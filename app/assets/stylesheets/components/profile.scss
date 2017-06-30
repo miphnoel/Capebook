@@ -2,10 +2,10 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .main-content {
     display: flex;
-    flex-direction: column;
     margin-bottom: 0;
   }
 }
@@ -18,7 +18,6 @@
   width: 100%;
   height: 358px;
   position: relative;
-  margin-bottom: 20px;
 }
 
 .cover-photo-box {
@@ -81,7 +80,7 @@
   border-radius: 2px;
   z-index: 1;
   overflow: hidden;
-  bottom: 16px;
+  bottom: 14px;
   left: 16px;
 
   img {
@@ -180,7 +179,7 @@
   display: flex;
   flex-direction: column;
   width: 321px;
-  margin-right: 15px;
+  margin: 20px 15px 0 0;
 
   & > div {
     background: white;
@@ -283,12 +282,4 @@
     word-wrap: break-word;
     text-shadow: -1px 1px 1px $dark-grey;
   }
-}
-
-.timeline {
-  background: white;
-  border: 1px solid $border-grey;
-  border-radius: 3px;
-  padding: 10px;
-  flex: 1;
 }

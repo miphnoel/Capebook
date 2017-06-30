@@ -4,9 +4,9 @@ import merge from 'lodash/merge';
 const defaultState = {
   editProfile: false,
   editPic: false,
-  friendRequests: false,
-  messages: false,
-  notifications: false,
+  editPost: false,
+  deletePost: false,
+  deleteComment: false,
   approveDeny: false,
 };
 

@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import values from 'lodash/merge';
 
-import { closeModal } from '../../actions/modal_actions';
 import { fetchFriendRequests, updateFriendRequest } from '../../actions/friendship_actions';
 
 class FriendRequests extends React.Component {
@@ -32,7 +31,7 @@ class FriendRequests extends React.Component {
   render() {
     let requests;
     if (this.props.friendRequests.length < 1) {
-      requests = <li className="no-requests">No pending requests</li>
+      requests = <li className="no-items">No pending requests</li>
     } else {
       requests = this.props.friendRequests.map(request => (
         <li key={request.id}>
@@ -85,7 +84,6 @@ const mapStateToProps = ({ session, friendships }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  closeModal: (modal) => dispatch(closeModal(modal)),
   fetchFriendRequests: () => dispatch(fetchFriendRequests()),
   updateFriendRequest: (friendship) => dispatch(
                         updateFriendRequest(friendship)),

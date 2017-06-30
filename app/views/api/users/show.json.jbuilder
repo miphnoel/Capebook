@@ -1,4 +1,5 @@
-json.extract! @user, :id, :email, :first_name, :last_name, :dob, :alignment
+json.extract! @user, :id, :email, :first_name, :last_name, :alignment
+json.dob @user.dob.strftime("%B %-d, %Y")
 json.join_date @user.created_at.strftime("%B %Y")
 json.prof_pic asset_path(@user.prof_pic.url)
 json.cover_pic asset_path(@user.cover_pic.url)

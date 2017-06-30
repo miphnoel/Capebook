@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :comments, only: [:create, :update, :destroy]
     get 'users/:id/friends', to: 'users#friends', as: 'friends'
     get 'timeline/:id', to: 'posts#timeline', as: 'timeline'
+    get 'newsfeed', to: 'posts#newsfeed', as: 'newsfeed'
   end
 end

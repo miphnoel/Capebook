@@ -1,5 +1,4 @@
 
-
 export const createComment = (comment) => {
   return $.ajax({
     method: 'POST',
@@ -16,9 +15,9 @@ export const updateComment = (comment) => {
   });
 }
 
-export const deleteComment = (id) => {
+export const deleteComment = (comment) => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/comments/${id}`
+    url: `api/comments/${comment.id}`
   });
 }

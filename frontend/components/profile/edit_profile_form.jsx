@@ -96,7 +96,7 @@ class EditProfileForm extends React.Component {
             />
           </div>
           <div className="edit-field">
-            <label className="edit-label">
+            <label htmlFor="location" className="edit-label">
               <i className="fa fa-home" aria-hidden="true"></i>
               <h3>Current City</h3>
             </label>

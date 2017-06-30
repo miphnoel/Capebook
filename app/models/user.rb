@@ -50,7 +50,7 @@ class User < ApplicationRecord
 
   has_many :authored_posts, foreign_key: :author_id, class_name: :Post
   has_many :received_posts, foreign_key: :receipient_id, class_name: :Post
-  has_many :comments, foreign_key: :author_id
+  has_many :comments, foreign_key: :author_id, dependent: :destroy
 
   attr_reader :password
 

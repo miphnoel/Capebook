@@ -2,7 +2,7 @@ import React from 'react';
 
 import ProfileHeaderContainer from './profile_header_container';
 import InfoColumn from './info_column';
-import Timeline from './timeline';
+import Feed from '../shared/feed';
 
 const ProfileContent = ({ user, currentUser }) => {
   return (
@@ -10,7 +10,7 @@ const ProfileContent = ({ user, currentUser }) => {
       <ProfileHeaderContainer />
       <div className="profile-bottom">
         <InfoColumn />
-        <Timeline userId={user.id} />
+        <Feed />
       </div>
     </div>
   );

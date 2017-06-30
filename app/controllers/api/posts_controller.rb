@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
     @post.author_id = current_user.id
 
     if @post.save
-      @post.includes(:author)
+      # @post.includes(:author)
       render :show
     else
       render @post.errors.full_messages, status: 422
@@ -42,8 +42,21 @@ class Api::PostsController < ApplicationController
 
     @posts = Post
       .where(recipient_id: @user.id)
-      .includes(:author, :recipient, :comments)
+      .includes(:author, :recipient, comments: :author)
       .order(created_at: :desc)
+
+    render :feed
+  end
+
+  def newsfeed
+    friend_ids = current_user.friend_ids.push(current_user.id)
+
+    @posts = Post
+      .where(author_id: [friend_ids])
+      .includes(:author, :recipient, comments: :author)
+      .order(created_at: :desc)
+
+    render :feed
   end
 
   private

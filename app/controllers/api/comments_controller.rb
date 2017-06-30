@@ -5,7 +5,8 @@ class Api::CommentsController < ApplicationController
     @comment.author_id = current_user.id
 
     if @comment.save
-      render :show
+      @post = @comment.parent
+      render 'api/posts/show'
     else
       render @comment.errors.full_messages, status: 422
     end
@@ -17,7 +18,8 @@ class Api::CommentsController < ApplicationController
     if @comment.author_id != current_user.id
       render json: "cannot edit others' comments", status: 401
     elsif @comment.update(comment_params)
-      render :show
+      @post = @comment.parent
+      render 'api/posts/show'
     else
       render @comment.errors.full_messages, status: 422
     end
@@ -28,7 +30,8 @@ class Api::CommentsController < ApplicationController
 
     if @comment.author_id == current_user.id
        @comment.destroy
-        render json: @comment.id
+        @post = @comment.parent
+        render 'api/posts/show'
     else
       render json: "cannot delete others' comments", status: 401
     end
