@@ -9,6 +9,7 @@ class EditPost extends React.Component {
   constructor(props) {
     super(props);
 
+
     this.state = { body: props.post.body };
 
     this.update = this.update.bind(this);
@@ -26,10 +27,8 @@ class EditPost extends React.Component {
   }
 
   render() {
+
     return (
-      <div
-        className="modal-frame"
-        onClick={() => this.props.closeModal('editPost')}>
         <div
           className="inner-modal-wrap edit-wrap"
           onClick={e => e.stopPropagation()}
@@ -59,7 +58,6 @@ class EditPost extends React.Component {
             </div>
           </div>
         </div>
-      </div>
     );
   }
 }

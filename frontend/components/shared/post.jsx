@@ -7,6 +7,10 @@ import PostMenu from './post_menu';
 
 
 const Post = ({ post, currentUser }) => {
+  if (!post.comments) {
+    return <div></div>
+  }
+
   const recipientText = (post.author_id === post.recipient_id
     ? ""
     : (<div>
@@ -43,7 +47,7 @@ const Post = ({ post, currentUser }) => {
       </ul>
     );
   }
-  debugger
+
   return (
     <li className="post">
       <div className="post-header">
