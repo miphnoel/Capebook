@@ -20,11 +20,11 @@
     "react-router-dom": "^4.1.1",
     "react-textarea-autosize": "^5.0.7",
     "redux": "^3.7.0",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
     "webpack": "^3.0.0"
   },
   "devDependencies": {
+    "redux-logger": "^3.0.6",
     "eslint": "^4.0.0",
     "eslint-config-google": "^0.8.0",
     "eslint-plugin-react": "^7.1.0"
@@ -34,9 +34,10 @@
     "npm": "3.10.10"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "webpack": "webpack --watch",
-    "postinstall": "webpack"
+    "postinstall": "webpack",
+    "build:dev": "webpack --env=dev --progress --profile --colors",
+    "build:dist": "webpack --end=prod --progress --profile --colors"
   },
   "repository": {
     "type": "git",
