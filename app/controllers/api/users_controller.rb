@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
   before_action :require_proper_user, only: [:update, :destroy]
 
   def index
-    @users = User.all
+    @users = User.search_by_full_name(params[:query])
   end
 
   def friends

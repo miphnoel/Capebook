@@ -2,7 +2,7 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import { Redirect } from 'react-router';
 
-import SearchContainer from './search_container';
+import SearchBar from './search_bar';
 import FriendRequests from './friend_requests';
 import Messages from './messages';
 import Notifications from './notifications';
@@ -24,7 +24,7 @@ class NavBar extends React.Component {
             <Link to='/'>
               <i className="fa fa-facebook-official fa-2x square-logo" aria-hidden="true"></i>
             </Link>
-            <SearchContainer />
+            <SearchBar />
           </div>
           <div className="right-nav">
             <div className="nav-links">

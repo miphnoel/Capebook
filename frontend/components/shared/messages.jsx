@@ -69,7 +69,7 @@ class Messages extends React.Component {
               }
             </ul>
           </div>
-          <div className='transparent-frame'
+          <div className='dropdown-wrapper'
             onClick={() => this.setState({ show: false })}></div>
         </div>
       );

@@ -69,7 +69,7 @@ class FriendRequests extends React.Component {
               {this.state.loading ? <div className="loader"></div> : requests}
             </ul>
           </div>
-          <div className='transparent-frame'
+          <div className='dropdown-wrapper'
             onClick={() => this.setState({ show: false })}></div>
         </div>
       );

@@ -30,9 +30,10 @@ export const updateProfile = (id, profile) => {
   });
 }
 
-export const fetchAllUsers = () => {
+export const search = (query) => {
   return $.ajax({
     method: 'GET',
-    url: 'api/users'
+    url: 'api/users',
+    data: { query }
   })
 }

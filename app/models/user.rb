@@ -23,6 +23,11 @@
 #
 
 class User < ApplicationRecord
+  include PgSearch
+  pg_search_scope :search_by_full_name,
+    against: [:first_name, :last_name],
+    using: { tsearch: { prefix: true} } 
+
   has_attached_file :prof_pic, default_url: "missing.jpg"
   has_attached_file :cover_pic, default_url: "default_cover.jpg"
   validates_attachment_content_type :prof_pic, content_type: /\Aimage\/.*\Z/
