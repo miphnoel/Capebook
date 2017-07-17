@@ -25,7 +25,7 @@ const PostsReducer = (state = defaultState, action) => {
     case REMOVE_POST:
       newState = merge({}, state);
       delete newState[action.postId];
-      newState.postIds = Object.keys(newState);
+      newState.postIds = Object.keys(newState).reverse();
       return newState;
     default:
       return state;

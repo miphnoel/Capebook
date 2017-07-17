@@ -66,7 +66,6 @@ class Api::UsersController < ApplicationController
       params.require(:user).permit(:prof_pic, :cover_pic)
     end
 
-    #
     # translate [ pending, approved, denied ] into
     # [ self, no_connection, sent_request, received_request, friends, blocked, blocker]
     def status

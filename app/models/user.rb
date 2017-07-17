@@ -26,7 +26,7 @@ class User < ApplicationRecord
   include PgSearch
   pg_search_scope :search_by_full_name,
     against: [:first_name, :last_name],
-    using: { tsearch: { prefix: true} } 
+    using: { tsearch: { prefix: true} }
 
   has_attached_file :prof_pic, default_url: "missing.jpg"
   has_attached_file :cover_pic, default_url: "default_cover.jpg"
@@ -114,7 +114,7 @@ class User < ApplicationRecord
     # END").where(status: "approved")
 
     friendships.where(status: "approved").
-    pluck(:sender_id, :receiver_id).flatten.reject {|id| id == self.id}
+      pluck(:sender_id, :receiver_id).flatten.reject {|id| id == self.id}
   end
 
   def friends
@@ -127,17 +127,18 @@ class User < ApplicationRecord
       User.where(id: friend_ids)
   end
 
-  def create_profile
-    Profile.create(
-      user_id: self.id,
-      job: '',
-      workplace: '',
-      education: '',
-      location: '',
-      hometown: '' )
-  end
 
   private
+
+  def create_profile
+    Profile.create(
+    user_id: self.id,
+    job: '',
+    workplace: '',
+    education: '',
+    location: '',
+    hometown: '' )
+  end
 
   def ensure_session_token
     self.session_token ||= generate_session_token

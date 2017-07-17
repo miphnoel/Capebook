@@ -8,6 +8,7 @@ const defaultState = {
   deletePost: false,
   deleteComment: false,
   approveDeny: false,
+  searchResults: false,
 };
 
 const ModalReducer = (state = defaultState, action) => {

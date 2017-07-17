@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const SearchResults = ({ results }) => {
+const SearchResults = ({ results, closeModal }) => {
   const resultsList = Object.values(results);
 
   let resultItems = (<li>No capes found...</li>);
@@ -18,8 +18,9 @@ const SearchResults = ({ results }) => {
   }
 
   return (
-    <div className="search-results-box"
-      onClick={(e) => e.stopPropagation()}>
+    <div
+      className="search-results-box"
+      onClick={closeModal}>
       <ul className="search-results">
         {resultItems}
       </ul>
