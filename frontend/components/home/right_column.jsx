@@ -7,7 +7,13 @@ const RightColumn = (props) => (
       Welcome to Capebook!
     </div>
     <div className="ads">
-      <p>Check out tuneLoop to write your own melody!</p>
+      <a href="http://miphnoel.github.io/tuneLoop"
+        target="_blank">
+        <img
+          src="http://dssra5iv431o5.cloudfront.net/users/static/tuneloop.png"
+          alt="tuneLoop sample image"/>
+        <p>Check out tuneLoop to write your own melody!</p>
+      </a>
 
     </div>
   </div>

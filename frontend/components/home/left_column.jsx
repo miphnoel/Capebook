@@ -15,9 +15,9 @@ const LeftColumn = ({ currentUser }) => {
         </li>
         <li>
           <a
-            href='https://www.michaelnoel.us'
+            href='http://www.michaelnoel.us'
             target='_blank'>
-            <img src={currentUser.prof_pic} />
+            <img src='http://dssra5iv431o5.cloudfront.net/users/static/portfolio_icon.png'/>
             My Portfolio
         </a>
         </li>
@@ -25,7 +25,7 @@ const LeftColumn = ({ currentUser }) => {
           <a
             href='https://miphnoel.github.io/tuneLoop'
             target='_blank'>
-            <img src={currentUser.prof_pic} />
+            <img src='http://dssra5iv431o5.cloudfront.net/users/static/tuneloop_icon.png' />
             tuneLoop
         </a>
         </li>
@@ -33,7 +33,7 @@ const LeftColumn = ({ currentUser }) => {
           <a
             href='https://www.github.com/miphnoel/wizzDOM'
             target='_blank'>
-            <img src={currentUser.prof_pic} />
+            <img src='http://dssra5iv431o5.cloudfront.net/users/static/wizzdom_icon.png' />
             wizzDOM
         </a>
         </li>
