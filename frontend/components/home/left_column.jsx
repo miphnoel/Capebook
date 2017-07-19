@@ -13,6 +13,30 @@ const LeftColumn = ({ currentUser }) => {
           {`${currentUser.first_name} ${currentUser.last_name}`}
           </Link>
         </li>
+        <li>
+          <a
+            href='https://www.michaelnoel.us'
+            target='_blank'>
+            <img src={currentUser.prof_pic} />
+            My Portfolio
+        </a>
+        </li>
+        <li>
+          <a
+            href='https://miphnoel.github.io/tuneLoop'
+            target='_blank'>
+            <img src={currentUser.prof_pic} />
+            tuneLoop
+        </a>
+        </li>
+        <li>
+          <a
+            href='https://www.github.com/miphnoel/wizzDOM'
+            target='_blank'>
+            <img src={currentUser.prof_pic} />
+            wizzDOM
+        </a>
+        </li>
       </ul>
     </div>
   )

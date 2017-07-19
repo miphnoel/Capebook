@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 const RightColumn = (props) => (
   <div className="right-col">
     <div className="event-notifications">
-      Event notifications
+      Welcome to Capebook!
     </div>
-    <div className="trending">
-      Trending
+    <div className="ads">
+      <p>Check out tuneLoop to write your own melody!</p>
+
     </div>
   </div>
 );

@@ -1,7 +1,7 @@
 import React from 'react';
 
-import NavBarContainer from '../shared/nav_bar_container';
-import Feed from '../shared/feed';
+import NavBarContainer from '../nav_bar/nav_bar_container';
+import Feed from '../feed/feed';
 import LeftColumn from './left_column';
 import RightColumn from './right_column';
 
