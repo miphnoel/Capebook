@@ -17,7 +17,7 @@ const mapDispatchToProps = dispatch => ({
   closeModal: (modal) => dispatch(closeModal(modal)),
   requestFriendship: (receiverId) => dispatch(createFriendRequest(receiverId)),
   unfriend: (id) => dispatch(unfriend(id)),
-  fetchFriendship: (friendshipId) => dispatch(fetchFriendship(friendshipId))
+  fetchFriendship: (senderId) => dispatch(fetchFriendship(senderId))
 });
 
 export default connect(

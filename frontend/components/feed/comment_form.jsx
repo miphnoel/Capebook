@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import { createComment,
          updateComment,
@@ -31,7 +32,9 @@ class CommentForm extends React.Component {
       <form
         className="comment-form"
         onSubmit={this.handleCreate}>
-        <img src={this.props.currentUser.prof_pic} />
+        <Link to={`/profile/${this.props.currentUser.id}`}>
+          <img src={this.props.currentUser.prof_pic} />
+        </Link>
         <input
           type="text"
           value={this.state.body}

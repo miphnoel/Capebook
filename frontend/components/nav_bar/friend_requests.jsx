@@ -36,7 +36,9 @@ class FriendRequests extends React.Component {
       requests = this.props.friendRequests.map(request => (
         <li key={request.id}>
           <div>
-            <img src={request.thumb} />
+            <Link to={`/profile/${request.sender_id}`}>
+              <img src={request.thumb} />
+            </Link>
             <Link to={`/profile/${request.sender_id}`}>{request.sender_name}</Link>
           </div>
           <div>

@@ -21,8 +21,12 @@
       margin-left: 0.3em;
     }
 
-    .profile-nav-links > li {
-      display: none;
+    div.profile-nav-bar {
+      justify-content: flex-end;
+    }
+
+    ul.profile-nav-links {
+      margin-right: 1em;
     }
 
     .friend-pic {
@@ -42,6 +46,13 @@
 
     .feed {
       margin-left: 0.5em;
+    }
+
+
+    .profile-nav-links > li {
+      a {
+        padding: 12px 5px;
+      }
     }
   }
 }
@@ -82,7 +93,6 @@
 }
 
 .profile-nav-links {
-  margin: 0 auto;
   display: flex;
 
   li {

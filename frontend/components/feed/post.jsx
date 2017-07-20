@@ -28,7 +28,9 @@ const Post = ({ post, currentUser }) => {
   if (post.comments.commentIds.length > 0) {
     const comments = values(post.comments.entities).map(comment => (
       <li key={comment.id}>
-        <img src={comment.author_pic} />
+        <Link to={`/profile/${comment.author_id}`}>
+          <img src={comment.author_pic} />
+        </Link>
         <div className="comment-content">
           <span>
             <Link to={`/profile/${comment.author_id}`}>
@@ -51,7 +53,9 @@ const Post = ({ post, currentUser }) => {
   return (
     <li className="post">
       <div className="post-header">
-        <img src={post.author_pic} />
+        <Link to={`/profile/${post.author_id}`}>
+          <img src={post.author_pic} />
+        </Link>
         <div className="post-header-info">
           <div className="post-usernames">
             <Link to={`/profile/${post.author_id}`}>

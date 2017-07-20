@@ -22,7 +22,7 @@ export const createFriendRequest = (receiverId) => {
 export const updateFriendRequest = (friendship) => {
   return $.ajax({
     type: 'PATCH',
-    url: `api/users/${friendship.senderId}/friendships/${friendship.id}`,
+    url: `api/friendships/${friendship.id}`,
     data: { friendship }
   });
 }

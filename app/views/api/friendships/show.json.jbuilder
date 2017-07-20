@@ -1,1 +1,4 @@
-json.partial! 'api/friendships/friendship', friendship: @friendship
+json.partial! 'api/friendships/friendship', locals: {
+    friendship: @friendship,
+    status: @status
+  }

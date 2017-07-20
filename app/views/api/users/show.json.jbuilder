@@ -3,10 +3,8 @@ json.dob @user.dob.strftime("%B %-d, %Y")
 json.join_date @user.created_at.strftime("%B %Y")
 json.prof_pic asset_path(@user.prof_pic.url)
 json.cover_pic asset_path(@user.cover_pic.url)
-json.friendship do
-  json.id (@current_friendship ? @current_friendship.id : -1)
-  json.status @status
-end
+json.friendship_status @friendship_status
+
 json.profile do
   json.partial! 'api/profile/profile', profile: @user.profile
 end

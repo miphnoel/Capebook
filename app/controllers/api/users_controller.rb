@@ -12,10 +12,10 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    @current_friendship = @user.friendships.where(
+    @friendship_status = @user.friendships.where(
       "sender_id = #{current_user.id} OR receiver_id = #{current_user.id}")
+      .pluck(:status)
       .first
-    @status = status
     @posts = @user.posts.includes(comments: :author)
   end
 
@@ -46,41 +46,23 @@ class Api::UsersController < ApplicationController
 
   private
 
-    def set_user
-      @user = User.find(params[:id])
-    end
+  def set_user
+    @user = User.find(params[:id])
+  end
 
-    def require_proper_user
-      if current_user.id != @user.id
-        render json: "You villain! Hands off profiles that aren't yours!"
-      end
+  def require_proper_user
+    if current_user.id != @user.id
+      render json: "You villain! Hands off profiles that aren't yours!"
     end
+  end
 
-    def user_params
-      params.require(:user).permit(
-        :email, :password, :first_name, :last_name, :dob, :alignment,
-      )
-    end
+  def user_params
+    params.require(:user).permit(
+      :email, :password, :first_name, :last_name, :dob, :alignment,
+    )
+  end
 
-    def picture_params
-      params.require(:user).permit(:prof_pic, :cover_pic)
-    end
-
-    # translate [ pending, approved, denied ] into
-    # [ self, no_connection, sent_request, received_request, friends, blocked, blocker]
-    def status
-      return -1 if @user.id == current_user.id
-      return 0 unless @current_friendship
-      current_status = @current_friendship.status
-      case current_status
-      when "pending"
-        return 1 if current_user.id == @current_friendship.sender_id
-        return 2
-      when "approved"
-        return 3
-      when "denied"
-        return 4 if @user.id == @current_friendship.receiver_id
-        return 5
-      end
-    end
+  def picture_params
+    params.require(:user).permit(:prof_pic, :cover_pic)
+  end
 end

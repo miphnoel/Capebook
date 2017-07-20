@@ -8,44 +8,32 @@ class ProfileHeader extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { status: props.user.friendship.status }
+    this.state = { status: props.friendship.status }
 
-    this.handleClick = this.handleClick.bind(this)
+    this.handleClick = this.handleClick.bind(this);
   }
 
   componentDidMount() {
-    const { status, id } = this.props.user.friendship;
-    if (status > 0 && id != this.props.friendship.id) {
-      this.props.fetchFriendship(id);
-    }
+    this.props.fetchFriendship(this.props.user.id)
+      .then(() => this.setState({ status: this.props.friendship.status }));
   }
 
   componentWillReceiveProps(nextProps) {
-    const { status, sender_id } = nextProps.friendship;
-    if (status === this.props.friendship.status ||
-        sender_id !== this.props.user.id) {
-      return;
-    } else if (status === "approved") {
-      this.setState({ status: 3 });
-    } else if (status === "denied") {
-      if (this.props.user.id === sender_id) {
-        this.setState({ status: 5 });
-      } else {
-        this.setState({ status: 4})
-      }
+    const nextStatus = nextProps.friendship.status
+    if (nextStatus &&
+        nextStatus !== this.props.friendship.status) {
+      this.setState({ status: nextStatus });
     }
   }
 
   handleClick(e) {
     e.preventDefault(e)
-    const { user } = this.props;
-    const friendshipId = user.friendship.id
     switch (this.state.status) {
       case -1:
         this.props.openModal('editProfile');
         break;
       case 0:
-        this.props.requestFriendship(user.id);
+        this.props.requestFriendship(this.props.user.id);
         this.setState({ status: 1 });
         break;
       case 1:

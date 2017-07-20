@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import Textarea from 'react-textarea-autosize';
 
 import { createPost } from '../../actions/post_actions';
@@ -72,7 +73,9 @@ class PostForm extends React.Component {
             <span>{postLabel}</span>
           </div>
           <div className="post-form-content">
-            <img src={currentUser.prof_pic} />
+            <Link to={`/profile/${currentUser.id}`}>
+              <img src={currentUser.prof_pic} />
+            </Link>
             <div className="text-container">
               <Textarea
                 spellCheck="false"
