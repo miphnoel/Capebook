@@ -130,12 +130,12 @@ class ProfileHeader extends React.Component {
                 </Link>
               </li>
               <li>
-                <Link to={`/profile/${user.id}`}>
+                <Link to={`/profile/${user.id}/friends`}>
                   Friends
                 </Link>
               </li>
               <li>
-                <Link to={`/profile/${user.id}`}>
+                <Link to={`/profile/${user.id}/photos`}>
                   Photos
                 </Link>
               </li>

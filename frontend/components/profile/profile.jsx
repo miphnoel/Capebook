@@ -32,13 +32,12 @@ class Profile extends React.Component {
   }
 
   render() {
-    const user = this.props.user;
     let comp;
 
     if (this.state.loading) {
       comp = <div className="loader">''</div>
     } else {
-      comp = <ProfileContent user={user} />
+      comp = <ProfileContent />
     }
 
     return (

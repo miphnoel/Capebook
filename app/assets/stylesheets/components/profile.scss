@@ -211,7 +211,7 @@
   }
 }
 
-.profile-bottom {
+.timeline {
   display: flex;
 }
 
@@ -293,7 +293,7 @@
 .friends-grid {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .friend-pic {
@@ -355,10 +355,117 @@
 .photo-grid {
   display: flex;
   flex-flow: row wrap;
-  justify-content: center;
+  justify-content: flex-start;
 
   li {
     text-align: center;
-    padding-bottom: 5px;
+    padding: 0 0 5px 8px;
+  }
+}
+
+.friends-page {
+  border: 1px solid $border-grey;
+  margin-top: 20px;
+
+  .friends-page-header {
+    padding: 12px;
+    background: $lighter-back-grey;
+    font-size: 24px;
+    display: flex;
+    justify-content: flex-start;
+
+    i {
+      color: $placeholder-grey;
+      margin-right: 12px;
+    }
+
+    h3 {
+      color: $dark-grey;
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+
+  ul {
+    background: white;
+    border-top: 1px solid $border-grey;
+    padding: 12px 12px 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    li {
+      border: 1px solid $light-grey;
+      margin: 0 0 12px 12px;
+      display: flex;
+      align-items: center;
+      width: calc(100% * 0.5 - 18px);
+
+      img {
+        height: 100px;
+        width: 100px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-right: 12px;
+      }
+
+      a {
+        color: $content-blue;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+.photos-page {
+  border: 1px solid $border-grey;
+  margin-top: 20px;
+
+  .photos-page-header {
+    padding: 12px;
+    background: $lighter-back-grey;
+    font-size: 24px;
+    display: flex;
+    justify-content: flex-start;
+
+    i {
+      color: $placeholder-grey;
+      margin-right: 12px;
+    }
+
+    h3 {
+      color: $dark-grey;
+      font-size: 20px;
+      margin: 0;
+    }
+  }
+
+  ul {
+    background: white;
+    border-top: 1px solid $border-grey;
+    padding: 12px 12px 0 0;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+
+    li {
+      margin: 0 0 12px 12px;
+      display: flex;
+      align-items: center;
+      width: calc(100% * 0.5 - 18px);
+
+      img {
+        height: 100px;
+        width: 100px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        margin-right: 12px;
+      }
+
+      a {
+        color: $content-blue;
+        font-weight: bold;
+        font-size: 14px;
+      }
+    }
   }
 }

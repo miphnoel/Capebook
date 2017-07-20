@@ -28,14 +28,7 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def update
-    if friendship_params[sender_id]
-      @friendship = Friendship.where(
-        sender_id: friendship_params[sender_id],
-        receiver_id: current_user.id
-        )
-    else
-      @friendship = Friendship.find(params[:id])
-    end
+    @friendship = Friendship.find(params[:id])
 
     if @friendship.receiver_id == current_user.id && @friendship.update(friendship_params)
       render :show

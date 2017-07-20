@@ -46,7 +46,7 @@ const mapStateToProps = ({ users, friendships }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  updateFriendRequest: (senderId, friendship) => dispatch(updateFriendRequest(senderId, friendship)),
+  updateFriendRequest: (friendship) => dispatch(updateFriendRequest(friendship)),
   closeModal: (modal) => dispatch(closeModal(modal))
 })
 
