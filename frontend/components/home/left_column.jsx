@@ -14,29 +14,47 @@ const LeftColumn = ({ currentUser }) => {
           </Link>
         </li>
         <li>
+          <Link to={'/'}>
+          <i className="fa fa-newspaper-o fa-fw wide" aria-hidden="true"></i>
+          News Feed
+          </Link>
+        </li>
+        <li className="divider">
+          Explore
+        </li>
+        <li>
           <a
             href='http://www.michaelnoel.us'
             target='_blank'>
-            <img src='http://dssra5iv431o5.cloudfront.net/users/static/portfolio_icon.png'/>
-            My Portfolio
+            <i className="fa fa-address-card fa-fw wide" aria-hidden="true"></i>
+            Portfolio
         </a>
         </li>
         <li>
           <a
-            href='https://miphnoel.github.io/tuneLoop'
+            href='http://github.com/miphnoel'
             target='_blank'>
-            <img src='http://dssra5iv431o5.cloudfront.net/users/static/tuneloop_icon.png' />
-            tuneLoop
+            <i className="fa fa-github fa-fw" aria-hidden='true'></i>
+            Github
         </a>
         </li>
         <li>
           <a
-            href='https://www.github.com/miphnoel/wizzDOM'
+            href='http://www.linkedin.com/in/michael-noel'
             target='_blank'>
-            <img src='http://dssra5iv431o5.cloudfront.net/users/static/wizzdom_icon.png' />
-            wizzDOM
+            <i className="fa fa-linkedin fa-fw" aria-hidden='true'></i>
+            LinkedIn
         </a>
         </li>
+        <li>
+          <a
+            href='http://www.angel.co/michael-noel-3'
+            target='_blank'>
+            <i className="fa fa-angellist fa-fw" aria-hidden='true'></i>
+            AngelList
+        </a>
+        </li>
+
       </ul>
     </div>
   )

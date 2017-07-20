@@ -21,7 +21,22 @@
 
   a:hover {
       text-decoration: none;
+  }
+
+
+  @media (max-width: 580px) {
+    .right-nav {
+      div.drop-downs {
+        padding: 0 4px;
+        margin: 0 4px;
+
+        i {
+          padding-right: 4px;
+          padding-left: 4px;
+        }
+      }
     }
+  }
 }
 
 .left-nav {

@@ -101,7 +101,7 @@ class SignupForm extends React.Component {
   render () {
     const placeholder = this.props.placeholders;
     return (
-      <div>
+      <div className="signup-box">
         <h1>Suit Up</h1>
         <h2>And embrace the battle of good versus evil.</h2>
         <form className="signup-form" onSubmit={this.handleSubmit}>

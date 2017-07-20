@@ -20,3 +20,11 @@
 @import "base/loader.scss";
 
 @import "components/*";
+
+
+@media (max-width: 1024px) {
+  .main-content {
+    width: 100vw;
+    justify-content: center;
+  }
+}

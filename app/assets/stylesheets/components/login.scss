@@ -5,11 +5,41 @@
   flex-direction: column;
   align-items: center;
 
+  @media (max-width: 1000px) {
+    section.main-content {
+      width: 100vw;
+
+      & > div:first-child {
+      display: none;
+      }
+
+      div.signup-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  }
+
+  @media (max-height: 800px) {
+    section.main-content {
+      height: 100%;
+    }
+
+    footer {
+      height: 60px;
+      position: fixed;
+      bottom: 0;
+    }
+  }
+
   .main-content {
     position: relative;
     min-height: 600px;
     width: 980px;
     flex: 1;
+    display: flex;
+    justify-content: center;
   }
 
   nav {
@@ -257,7 +287,7 @@ footer {
     font-size: 14px;
     font-weight: bold;
     text-shadow: 0 1px 2px rgba(0,0,0,.5);
-    margin: 10px 0;
+    margin: 10px 5px;
     padding: 7px 10px;
     width: 194px;
     box-sizing: border-box;
@@ -265,5 +295,16 @@ footer {
 
   button:hover {
     background: linear-gradient(#79bc64, #578843);
+  }
+
+  a {
+    color: $content-lblue;
+    padding: 5px;
+
+    &:hover {
+      color: $content-blue;
+      position: relative;
+      top: -5px;
+    }
   }
 }

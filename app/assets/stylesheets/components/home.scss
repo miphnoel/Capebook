@@ -3,6 +3,59 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (max-width: 1024px) {
+    .right-col {
+      width: 250px;
+      margin-right: 2em;
+    }
+
+    .left-col {
+      margin-left: 2em;
+    }
+  }
+
+  @media (max-width: 880px) {
+    .left-col {
+      width: 120px;
+    }
+
+    .right-col {
+      width: 200px;
+    }
+  }
+
+  @media (max-width: 750px) {
+    .right-col {
+      display: none;
+    }
+
+    .feed {
+      margin-right: 2em;
+    }
+  }
+
+  @media (max-width: 580px) {
+    .home-link {
+      display: none;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .left-col {
+      display: none;
+    }
+
+    .feed {
+      margin-left: 2em;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .feed {
+      margin: 0 0.5em;
+    }
+  }
 }
 
 .left-col {
@@ -11,7 +64,6 @@
   margin-right: 12px;
 
   li {
-    padding: 4px;
     margin-bottom: 8px;
     display: flex;
     align-items: center;
@@ -22,6 +74,7 @@
       display: flex;
       align-items: center;
       width: 100%;
+      padding: 4px;
     }
 
     a:hover {
@@ -40,11 +93,33 @@
       border-radius: 2px;
     }
 
-    img, i {
+    img {
       height: 20px;
       width: 20px;
-      margin-right: 4px;
+      margin-right: 5px;
     }
+
+    i {
+      color: $content-blue;
+      width: 20px;
+      font-size: 20px;
+      text-align: center;
+      margin-right: 5px;
+    }
+
+    .wide {
+      font-size: 16px;
+    }
+  }
+
+  .divider {
+    margin-top: 30px;
+    padding: 4px;
+    pointer-events: none;
+    border-bottom: 1px solid $content-blue;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $placeholder-grey;
   }
 }
 
@@ -52,7 +127,7 @@
   width: 308px;
   margin: 20px 0 0 20px;
 
-  & > div {
+  div, li {
     background: white;
     padding: 12px;
     border: 1px solid $border-grey;
@@ -61,7 +136,6 @@
   }
 
   .ads {
-
     color: $content-blue;
     font-weight: bold;
 
@@ -71,6 +145,11 @@
       img {
         margin-bottom: 10px;
       }
+    }
+
+    p:last-child {
+      color: $placeholder-grey;
+      font-weight: normal;
     }
   }
 }

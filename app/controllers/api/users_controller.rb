@@ -16,7 +16,7 @@ class Api::UsersController < ApplicationController
       "sender_id = #{current_user.id} OR receiver_id = #{current_user.id}")
       .first
     @status = status
-    @posts = @user.posts.includes(:comments)
+    @posts = @user.posts.includes(comments: :author)
   end
 
   def create

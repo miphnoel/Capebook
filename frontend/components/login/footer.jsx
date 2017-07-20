@@ -8,7 +8,7 @@ class Footer extends React.Component {
   }
 
   loginBatman() {
-    
+
     this.props.login(
       {email: 'brucewayne@gotham.bat', password: 'alfred'}
     );
@@ -24,8 +24,25 @@ class Footer extends React.Component {
     return (
       <footer>
         <div className="my-links">
-          <a href='https://github.com/miphnoel'>
+          <a
+            href='https://github.com/miphnoel'
+            target='_blank'>
             <i className="fa fa-github fa-2x" aria-hidden="true"></i>
+          </a>
+          <a
+            href='https://www.linkedin.com/in/michael-noel'
+            target='_blank'>
+            <i className="fa fa-linkedin fa-2x" aria-hidden="true"></i>
+          </a>
+          <a
+            href='https://www.angel.co/michael-noel-3'
+            target='_blank'>
+            <i className="fa fa-angellist fa-2x" aria-hidden="true"></i>
+          </a>
+          <a
+            href='http://www.michaelnoel.us'
+            target='_blank'>
+            <i className="fa fa-address-card fa-2x" aria-hidden="true"></i>
           </a>
         </div>
         <div className="guest-logs">
