@@ -4,6 +4,10 @@
   flex-direction: column;
   align-items: center;
 
+  .feed {
+    max-width: 468px;
+  }
+  
   @media (max-width: 1024px) {
     .right-col {
       width: 250px;

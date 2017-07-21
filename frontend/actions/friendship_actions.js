@@ -2,6 +2,7 @@ import * as ApiUtil from '../util/friendship_api_util';
 
 export const RECEIVE_FRIEND_REQUESTS = "RECEIVE_FRIEND_REQUESTS"
 export const RECEIVE_FRIENDSHIP = "RECEIVE_FRIENDSHIP"
+export const RECEIVE_FRIENDSHIPS = "RECEIVE_FRIENDSHIPS"
 export const REMOVE_FRIENDSHIP = "REMOVE_FRIENDSHIP"
 
 export const receiveFriendRequests = (friendRequests) => ({
@@ -12,6 +13,11 @@ export const receiveFriendRequests = (friendRequests) => ({
 export const receiveFriendship = (friendship) => ({
   type: RECEIVE_FRIENDSHIP,
   friendship
+});
+
+export const receiveFriendships = (friendships) => ({
+  type: RECEIVE_FRIENDSHIPS,
+  friendships
 });
 
 export const removeFriendship = (friendshipId) => ({
@@ -27,6 +33,11 @@ export const fetchFriendRequests = () => (dispatch) => {
 export const fetchFriendship = (id) => (dispatch) => {
   return ApiUtil.fetchFriendship(id)
     .then(friendship => dispatch(receiveFriendship(friendship)));
+}
+
+export const fetchFriendships = (id) => (dispatch) => {
+  return ApiUtil.fetchFriesndships(id)
+    .then(friendships => dispatch(receiveFriendships(friendships)));
 }
 
 export const createFriendRequest = (receiverId) => (dispatch) => {

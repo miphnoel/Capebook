@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../actions/user_actions';
 import NavBarContainer from '../nav_bar/nav_bar_container';
 import ProfileContent from './profile_content';
-import EditProfileForm from './edit_profile_form';
 
 
 class Profile extends React.Component {
@@ -37,7 +36,7 @@ class Profile extends React.Component {
     if (this.state.loading) {
       comp = <div className="loader">''</div>
     } else {
-      comp = <ProfileContent />
+      comp = <ProfileContent user={this.props.user} />
     }
 
     return (
@@ -51,12 +50,10 @@ class Profile extends React.Component {
   }
 }
 
-const mapStateToProps = (state, ownProps) => {
-  return ({
-  currentUser: state.session.currentUser,
+const mapStateToProps = (state, ownProps) => ({
   userId: ownProps.match.params.userId,
   user: state.users.user
-})};
+});
 
 const mapDispatchToProps = (dispatch) => ({
   fetchUser: (id) => dispatch(fetchUser(id))

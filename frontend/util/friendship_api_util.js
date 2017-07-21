@@ -12,6 +12,13 @@ export const fetchFriendship = (id) => {
   })
 }
 
+export const fetchFriendships = (id) => {
+  return $.ajax({
+    type: 'GET',
+    url: `api/users/${id}/friendships`
+  })
+}
+
 export const createFriendRequest = (receiverId) => {
   return $.ajax({
     type: 'POST',

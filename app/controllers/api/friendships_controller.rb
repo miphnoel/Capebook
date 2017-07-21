@@ -6,7 +6,13 @@ class Api::FriendshipsController < ApplicationController
   end
 
   def show
-    @status = status_as_int
+    user_id = params[:id].to_i
+    if user_id == current_user.id
+      @status = -1
+    else
+      @friendship = find_friendships_by_user_ids(user_id).first
+      @status = status_as_int(@friendship)
+    end
 
     if @friendship
       render :show
@@ -32,7 +38,7 @@ class Api::FriendshipsController < ApplicationController
     @friendship = Friendship.find(params[:id])
 
     if @friendship.receiver_id == current_user.id && @friendship.update(friendship_params)
-      @status = status_as_int
+      @status = status_as_int(@friendship)
       render :show
     else
       render json: @friendship.errors.full_messages, status: 422
@@ -49,36 +55,43 @@ class Api::FriendshipsController < ApplicationController
     end
   end
 
+  def friends_list
+    user = User.find(params[:id]).includes(:friends)
+    @friends = user.friends.includes(:id)
+    @status_hash = {}
+
+    friendships = find_friendships_by_user_ids(@friends.ids)
+    friendships.each do |friendship|
+      ids = [friendship.sender_id, friendship.receiver_id]
+      other_user_id = ids.find {|id| id != current_user.id}
+      @status_hash[other_user_id] = [status_as_int(friendship), friendship.id]
+    end
+  end
+
   private
 
   def friendship_params
     params.require(:friendship).permit(:status)
   end
 
-  def find_friendship_by_user_ids(ids)
-    @friendship = Friendship.where(sender_id: ids, receiver_id: ids).first
+  def find_friendships_by_user_ids(ids)
+    Friendship.where(sender_id: current_user.id, receiver_id: ids)
+      .or(Friendship.where(receiver_id: current_user.id, sender_id: ids))
   end
 
   # translate [ pending, approved, denied ] into
   # [ self, no_connection, sent_request, received_request, friends, blocked, blocker]
-  def status_as_int
-    shown_user_id = params[:id].to_i
-    current_user_id = current_user.id
+  def status_as_int(friendship)
+    return 0 unless friendship
 
-    return -1 if shown_user_id == current_user_id
-
-    @friendship ||= find_friendship_by_user_ids([shown_user_id, current_user_id])
-
-    return 0 unless @friendship
-
-    case @friendship.status
+    case friendship.status
     when "pending"
-      return 1 if current_user_id == @friendship.sender_id
+      return 1 if current_user.id == friendship.sender_id
       return 2
     when "approved"
       return 3
     when "denied"
-      return 4 if current_user_id == @friendship.sender_id
+      return 4 if current_user.id == friendship.sender_id
       return 5
     end
   end
