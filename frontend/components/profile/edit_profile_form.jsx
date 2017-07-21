@@ -57,7 +57,7 @@ class EditProfileForm extends React.Component {
           </div>
           <div className="edit-field">
             <label htmlFor="job" className="edit-label">
-              <i className="fa fa-briefcase" aria-hidden="true"></i>
+              <i className="fa fa-briefcase fa-fw" aria-hidden="true"></i>
               <h3>Occupation</h3>
             </label>
             <input
@@ -71,7 +71,7 @@ class EditProfileForm extends React.Component {
           </div>
           <div className="edit-field">
             <label htmlFor="workplace" className="edit-label">
-              <i className="fa fa-building" aria-hidden="true"></i>
+              <i className="fa fa-building fa-fw" aria-hidden="true"></i>
               <h3>Company</h3>
             </label>
             <input
@@ -84,7 +84,7 @@ class EditProfileForm extends React.Component {
           </div>
           <div className="edit-field">
             <label htmlFor="education" className="edit-label">
-              <i className="fa fa-graduation-cap" aria-hidden="true"></i>
+              <i className="fa fa-graduation-cap fa-fw" aria-hidden="true"></i>
               <h3>Education</h3>
             </label>
             <input
@@ -97,7 +97,7 @@ class EditProfileForm extends React.Component {
           </div>
           <div className="edit-field">
             <label htmlFor="location" className="edit-label">
-              <i className="fa fa-home" aria-hidden="true"></i>
+              <i className="fa fa-home fa-fw" aria-hidden="true"></i>
               <h3>Current City</h3>
             </label>
             <input
@@ -110,7 +110,7 @@ class EditProfileForm extends React.Component {
           </div>
           <div className="edit-field">
             <label htmlFor="hometown" className="edit-label">
-              <i className="fa fa-map-marker" aria-hidden="true"></i>
+              <i className="fa fa-map-marker fa-fw" aria-hidden="true"></i>
               <h3>Hometown</h3>
             </label>
             <input

@@ -1,13 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 import FriendshipButtonContainer from './friendship_button_container';
+import EditPictureForm from './edit_picture_form';
+import { openModal } from '../../actions/modal_actions';
 
-const ProfileHeader = ({ user }) => {
+const ProfileHeader = ({ user, currentUser, editPicVisible, openModal }) => {
+
+  function handleClick() {
+    if (user.id === currentUser.id) { openModal(); }
+  }
+
   return (
     <div className="profile-header">
       <div className="cover-photo-box">
-        <img src={user.cover_pic} />
+        <img
+          src={user.cover_pic}
+          onClick={() => handleClick()}  />
       </div>
       <div className="profile-nav-bar">
         <div className="profile-nav-bar">
@@ -32,14 +42,29 @@ const ProfileHeader = ({ user }) => {
       </div>
       <FriendshipButtonContainer userId={user.id} />
       <div className="profile-picture-box">
-        <img src={user.prof_pic} />
+        <img
+          src={user.prof_pic}
+          onClick={() => handleClick()} />
       </div>
       <div className="username">
         <h1>{user.first_name + ' ' + user.last_name}</h1>
       </div>
+      {editPicVisible ? <EditPictureForm /> : <div></div>}
     </div>
   );
 }
 
+const mapStateToProps = (state, ownProps) => ({
+  user: ownProps.user,
+  currentUser: state.session.currentUser,
+  editPicVisible: state.modal.editPic,
+});
 
-export default ProfileHeader;
+const mapDispatchToProps = (dispatch) => ({
+  openModal: () => dispatch(openModal('editPic')),
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ProfileHeader);

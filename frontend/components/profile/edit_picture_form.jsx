@@ -83,21 +83,23 @@ class EditPictureForm extends React.Component {
                 <img src={prof_url ? prof_url : prof_pic} />
               </div>
             </div>
-            <div className="upload-buttons">
-              <label className="upload-pic-label">Update Profile Picture
-                <input
-                  type="file"
-                  hidden
-                  onChange={this.uploadProfPic}
-                  />
-              </label>
-              <label className="upload-pic-label">Update Cover Photo
-                <input
-                  type="file"
-                  hidden
-                  onChange={this.uploadCoverPic}
-                  />
-              </label>
+            <div className="edit-pic-buttons">
+              <div className="upload-buttons">
+                <label className="upload-pic-label">Update Cover Photo
+                  <input
+                    type="file"
+                    hidden
+                    onChange={this.uploadCoverPic}
+                    />
+                </label>
+                <label className="upload-pic-label">Update Profile Picture
+                  <input
+                    type="file"
+                    hidden
+                    onChange={this.uploadProfPic}
+                    />
+                </label>
+              </div>
               <button className="save-button" onClick={this.handleSubmit}>Save</button>
             </div>
           </div>

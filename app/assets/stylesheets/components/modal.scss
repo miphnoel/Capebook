@@ -80,7 +80,7 @@
 
 .edit-pics {
   height: 280px;
-  width: 650px;
+  width: 100%;
   border: none;
   position: relative;
 
@@ -173,6 +173,7 @@
   border-radius: 3px;
   margin: auto;
 
+
   .edit-pic-form-bottom {
     width: 650px;
     display: flex;
@@ -185,8 +186,9 @@
     }
   }
 
-  .upload-buttons {
+  .edit-pic-buttons {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: center;
     color: white;
@@ -197,6 +199,12 @@
     padding: 10px;
     margin: 10px;
 
+    .upload-buttons {
+      display: flex;
+      flex-flow: row wrap;
+      max-width: 70%;
+    }
+
     label, button {
       border-radius: 5px;
       background: linear-gradient($content-lblue, $header-lblue);
@@ -205,11 +213,12 @@
       border: 1px solid $content-lblue;
       border-color: $content-lblue;
       text-shadow: 0 1px 2px rgba(0,0,0,.5);
-      margin: 0 8px;
+      margin: 5px;
       box-sizing: content-box;
       text-align: center;
       padding: 12px;
       white-space: nowrap;
+      max-width: 70%;
 
       &:hover {
         background: $content-blue;
@@ -281,4 +290,80 @@
     border-radius: 2px;
   }
 
+}
+
+@media (max-width: 750px), (max-height: 800px) {
+  .edit-profile-form {
+    width: 450px;
+
+    .edit-pics {
+      height: 190px;
+
+      .edit-prof-pic {
+        height: 90px;
+        width: 90px;
+        bottom: 5px;
+        left: 5px;
+      }
+    }
+
+    .edit-field {
+      display: flex;
+
+      label {
+        width: 200px;
+        border-bottom: none;
+      }
+
+      input {
+        border-bottom: 1px solid $light-grey;
+        &#hometown {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  .edit-picture-form {
+    .cover-preview-box {
+      padding: 8px;
+
+      .cover-pic-preview {
+        height: 186px;
+        width: 417px;
+        margin: 0;
+
+        h3 {
+          bottom: 15px;
+          right: 20px;
+        }
+      }
+
+    }
+
+    .edit-pic-form-bottom {
+      width: 417px;
+      margin: 0 10px;
+
+      .prof-preview-box {
+        padding: 0 5px 5px;
+        margin: 0;
+        align-self: flex-start;
+
+        .prof-pic-preview {
+          height: 100px;
+          width: 100px;
+        }
+      }
+
+      .edit-pic-buttons {
+        padding: 5px;
+        margin: 5px;
+
+        .upload-pic-label {
+          padding: 10px;
+        }
+      }
+    }
+  }
 }
