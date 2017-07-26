@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { fetchUser } from '../../actions/user_actions';
-import NavBarContainer from '../nav_bar/nav_bar_container';
+import NavBar from '../nav_bar/nav_bar';
 import ProfileContent from './profile_content';
 
 
@@ -41,7 +41,7 @@ class Profile extends React.Component {
 
     return (
       <div className="profile-page">
-        <NavBarContainer />
+        <NavBar />
         <div className="main-content">
           {comp}
         </div>

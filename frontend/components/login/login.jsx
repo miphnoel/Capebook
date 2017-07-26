@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import LoginFormContainer from './login_form_container';
-import SignupFormContainer from './signup_form_container';
+import LoginForm from './login_form';
+import SignupForm from './signup_form';
 import ValueProposition from './value_proposition';
 import Footer from './footer';
 import { login } from '../../actions/session_actions';
@@ -12,7 +12,7 @@ const Login = (props) => (
     <nav className="nav-bar">
       <div className="nav-content">
         <Link to='/'><h1>capebook</h1></Link>
-        <LoginFormContainer />
+        <LoginForm />
       </div>
     </nav>
     <section className="main-content">
@@ -20,7 +20,7 @@ const Login = (props) => (
         <ValueProposition />
       </div>
       <div>
-        <SignupFormContainer />
+        <SignupForm />
       </div>
     </section>
     <Footer />

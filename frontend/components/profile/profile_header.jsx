@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import FriendshipButtonContainer from './friendship_button_container';
+import FriendshipButton from './friendship_button';
 import EditPictureForm from './edit_picture_form';
 import { openModal } from '../../actions/modal_actions';
 
@@ -40,7 +40,7 @@ const ProfileHeader = ({ user, currentUser, editPicVisible, openModal }) => {
           </ul>
         </div>
       </div>
-      <FriendshipButtonContainer userId={user.id} />
+      <FriendshipButton userId={user.id} />
       <div className="profile-picture-box">
         <img
           src={user.prof_pic}

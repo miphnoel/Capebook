@@ -1,7 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import EditProfileForm from './edit_profile_form';
 import ApproveDenyModal from './approve_deny_modal';
+import { openModal, closeModal } from '../../actions/modal_actions';
+import { fetchFriendship,
+         createFriendRequest,
+         unfriend } from '../../actions/friendship_actions';
 
 class FriendshipButton extends React.Component {
   constructor(props) {
@@ -115,4 +120,23 @@ class FriendshipButton extends React.Component {
 }
 
 
-export default FriendshipButton;
+const mapStateToProps = (state, ownProps) => ({
+  userId: ownProps.userId,
+  currentUser: state.session.currentUser,
+  editVisible: state.modal.editProfile,
+  approveDenyVisible: state.modal.approveDeny,
+  friendship: state.friendships.friendship
+});
+
+const mapDispatchToProps = dispatch => ({
+  openModal: (modal) => dispatch(openModal(modal)),
+  closeModal: (modal) => dispatch(closeModal(modal)),
+  requestFriendship: (receiverId) => dispatch(createFriendRequest(receiverId)),
+  unfriend: (id) => dispatch(unfriend(id)),
+  fetchFriendship: (senderId) => dispatch(fetchFriendship(senderId))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FriendshipButton);

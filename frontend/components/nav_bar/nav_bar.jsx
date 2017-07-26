@@ -1,11 +1,14 @@
 import React from 'react';
-import { withRouter, Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 import SearchBar from './search_bar';
 import FriendRequests from './friend_requests';
 import Messages from './messages';
 import Notifications from './notifications';
+import { logout } from '../../actions/session_actions';
+import { receiveUser } from '../../actions/user_actions';
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -58,4 +61,16 @@ class NavBar extends React.Component {
   }
 }
 
-export default withRouter(NavBar);
+const mapStateToProps = ({ session }) => ({
+  currentUser: session.currentUser,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => dispatch(logout()),
+  setNullUser: () => dispatch(receiveUser(null))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(NavBar);

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import NavBarContainer from '../nav_bar/nav_bar_container';
+import NavBar from '../nav_bar/nav_bar';
 import Feed from '../feed/feed';
 import LeftColumn from './left_column';
 import RightColumn from './right_column';
 
 const Home = (props) => (
   <div className="home-page">
-    <NavBarContainer />
+    <NavBar />
     <div className="main-content">
       <LeftColumn />
       <Feed />
